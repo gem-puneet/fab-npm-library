@@ -1,0 +1,23 @@
+{
+  "name": "fab-plugins-library",
+  "version": "1.0.0",
+  "description": "A custom npm package containing reusable components and utilities.",
+  "main": "dist/fab-plugins-library.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c config/rollup.config.js"
+  },
+  "keywords": [],
+  "author": "Gemini @Asif @Puneet",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
+    "postcss": "^8.4.38",
+    "rollup": "^4.17.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-html": "^0.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}
