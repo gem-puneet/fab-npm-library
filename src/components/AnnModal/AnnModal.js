@@ -13,9 +13,11 @@ const questionsAnswers = [
  
 function openModal() {
     // Ensure DOM content is loaded before accessing elements
+    console.log("openModal clicked");
     document.addEventListener("DOMContentLoaded", function () {
+        console.log("component loaded");
         const modal = document.getElementById("modal");
-        const modalBody = modal.querySelector('.modal-body');
+        const modalBody = modal.querySelector('.AnnModal-modal-body');
         if (!modal || !modalBody) {
             console.error("Modal element or modal body not found.");
             return;
