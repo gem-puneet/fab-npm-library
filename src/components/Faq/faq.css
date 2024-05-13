@@ -1,0 +1,101 @@
+body {
+    background: #000;
+}
+.container-outer{
+    width: 350px;
+    height: 400px;
+    background: #F8FAF8;
+}
+
+header {
+    background: linear-gradient(to right, #0066cc 35%, #3366cc 53%);
+    height:65px;
+}
+.boat-img {
+    position: relative;
+    bottom: 40px;
+    right: 60px;
+    width: 60px;
+}
+
+.header-text {
+    color:#fff;
+    padding: 8px 10px 10px 70px;
+
+}
+
+.header-text-faq {
+    font-family: sans-serif;
+}
+.header-text-help {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.search-img {
+    position: absolute;
+    left: 40px;
+    top: 93px;
+    width: 10px;
+}
+
+.search-box {
+    width: 85%;
+    padding: 8px 22px;
+    margin: 11px 10px 0px 25px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+.outer-div {
+    height: 270px;
+    overflow-y: scroll;
+    margin-top: 10px;
+}
+
+.questions-box {
+    width: 89%;
+    padding: 8px;
+    margin: 11px 10px 0px 25px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    fill: #888; 
+}
+
+/* CSS for FAQ items */
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.question {
+    font-family: sans-serif;
+}
+
+.answer {
+    font-family: sans-serif;
+    padding-top: 5px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.que-img {
+    float: right;
+    width: 12px;
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
