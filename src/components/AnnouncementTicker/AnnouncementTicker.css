@@ -1,0 +1,43 @@
+.announcement-button {
+    width: 200px; /* Set a specific width for the button */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: -1px; /* Remove default margin to ensure they look like they are touching */
+  }
+  
+  .ticker-container {
+    display: flex; /* Use flexbox to align items in the same line */
+  }
+  
+  .ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex-grow: 1; /* Allow the ticker to occupy remaining space */
+  }
+  
+  .ticker p {
+    display: inline-block;
+    margin: 0;
+    margin-right: 20px; /* Add some right margin between paragraphs */
+    animation: ticker-float 15s linear infinite alternate; /* Continuous animation without waiting for completion */
+  }
+  
+  @keyframes ticker-float {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-300%); /* Adjust based on width of the ticker */
+    }
+  }
+  
+  
+  
+  
+  
