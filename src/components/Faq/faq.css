@@ -5,7 +5,7 @@
     background: #F8FAF8;
 }
 
- header {
+ .faq-container-header {
     background: linear-gradient(to right, #0066cc 35%, #3366cc 53%);
     height:65px;
 }
