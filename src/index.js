@@ -4,6 +4,7 @@ import { Modal } from './components/Modal/Modal.js'; // This imports the modal c
 import TourGuide from './components/tourGuide/tourGuide.js';
 import { FAQComponent } from './components/Faq/faq.js';
 import openModal from "./components/AnnModal/AnnModal.js";
+import { HeadingComponent } from './components/Heading/heading.js';
 
 // Export components or functions as needed
-export { updateProgress, Modal, TourGuide, FAQComponent, openModal };
+export { updateProgress, Modal, TourGuide, FAQComponent, openModal, HeadingComponent };

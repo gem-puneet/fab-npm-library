@@ -706,7 +706,7 @@
 
     class FAQComponent {
         constructor(containerSelector, faqItems) {
-            this.container = document.querySelector(containerSelector);
+             this.container = document.querySelector(containerSelector);
             this.faqItems = faqItems;
         }
 
@@ -903,7 +903,20 @@
         });
     }
 
+    class HeadingComponent {
+        constructor() {
+        }
+        testHeadingFun(){
+        var TestHeading = document.createElement("div");
+        TestHeading.innerHTML = "Hello How are you all";
+
+        const hh = document.getElementsByClassName('test-heading')[0];
+        hh.appendChild(TestHeading);
+        }
+    }
+
     exports.FAQComponent = FAQComponent;
+    exports.HeadingComponent = HeadingComponent;
     exports.Modal = Modal;
     exports.TourGuide = TourGuide;
     exports.openModal = openModal;
