@@ -126,8 +126,3 @@ var faqItems = [
     { question: "How can I access Fab online banking", answer: "Dummy text" },
     { question: "How can I access Fab online banking", answer: "Dummy text" }
 ];
-
-
-
-const faqComponent = new FAQComponent(".container-outer", faqItems);
-faqComponent.createFAQComponent();
