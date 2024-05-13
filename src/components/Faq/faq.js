@@ -1,3 +1,4 @@
+import "./faq.css";
 export class FAQComponent {
     constructor(containerSelector, faqItems) {
         this.container = document.querySelector(containerSelector);
@@ -6,16 +7,16 @@ export class FAQComponent {
 
     createHeader() {
         const header = document.createElement("header");
-        header.classList.add("container-header");
+        header.classList.add("faq-container-header");
 
         const headerText = document.createElement("div");
-        headerText.classList.add("header-text");
+        headerText.classList.add("faq-header-text");
 
         const faqTitle = document.createElement("div");
-        faqTitle.innerHTML = "<span class='header-text-faq'>FAQs with FinBot</span><br/><span class='header-text-help'>Get help 24*7</span>";
+        faqTitle.innerHTML = "<span class='header-text-faq'>FAQs with FinBot</span><br/><span class='faq-header-text-help'>Get help 24*7</span>";
 
         const svgImage = document.createElement("img");
-        svgImage.classList.add("boat-img");
+        svgImage.classList.add("faq-boat-img");
         svgImage.setAttribute("src", "./assets/icon/Chatbot.svg");
 
         headerText.appendChild(faqTitle);
@@ -26,18 +27,18 @@ export class FAQComponent {
 
     createFAQComponent() {
         const bodyContainer = document.createElement("div");
-        bodyContainer.classList.add("body-container");
+        bodyContainer.classList.add("faq-body-container");
 
         this.createHeader();
 
         const inputElement = document.createElement("input");
         const searchImage = document.createElement("img");
 
-        searchImage.classList.add("search-img");
+        searchImage.classList.add("faq-search-img");
         searchImage.setAttribute("src", "./assets/icon/search.svg");
         bodyContainer.appendChild(searchImage);
 
-        inputElement.classList.add("search-box");
+        inputElement.classList.add("faq-search-box");
         inputElement.setAttribute("type", "text");
         inputElement.setAttribute("placeholder", "Cannot find what you need? Type here");
 
@@ -64,9 +65,9 @@ export class FAQComponent {
 
         function toggleFAQItem(id) {
             const answerElement = document.getElementById("answer" + id);
-            answerElement.classList.toggle("hidden");
+            answerElement.classList.toggle("faq-hidden");
             const queImage = document.getElementById("img" + id);
-            if (answerElement.classList.contains("hidden")) {
+            if (answerElement.classList.contains("faq-hidden")) {
                 queImage.setAttribute("src", "./assets/icon/CircleDown.svg");
             } else {
                 queImage.setAttribute("src", "./assets/icon/CircleUp.svg");
@@ -74,20 +75,20 @@ export class FAQComponent {
         }
 
         const outerDiv = document.createElement("div");
-        outerDiv.classList.add("outer-div");
+        outerDiv.classList.add("faq-outer-div");
 
         faqItems.forEach(function (faqItem, index) {
             const faqContainer = document.createElement("div");
-            faqContainer.classList.add("questions-box");
+            faqContainer.classList.add("faq-questions-box");
             faqContainer.id = "questions" + (index + 1);
 
             const question = document.createElement("div");
-            question.classList.add(`question`);
+            question.classList.add(`faq-question`);
             question.id = "que" + (index + 1);
             question.textContent = faqItem.question;
 
             const answer = document.createElement("div");
-            answer.classList.add("answer", "hidden");
+            answer.classList.add("faq-answer", "hidden");
             answer.id = "answer" + (index + 1);
             answer.textContent = faqItem.answer;
 
@@ -97,7 +98,7 @@ export class FAQComponent {
             outerDiv.appendChild(faqContainer);
             const queImage = document.createElement("img");
             queImage.id = "img" + (index + 1);
-            queImage.classList.add("que-img");
+            queImage.classList.add("faq-que-img");
             queImage.setAttribute("src", "./assets/icon/CircleDown.svg");
             queImage.addEventListener("click", function () {
                 toggleFAQItem(index + 1);
