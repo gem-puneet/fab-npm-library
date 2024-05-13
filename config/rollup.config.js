@@ -33,7 +33,9 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import html from 'rollup-plugin-html';
-
+import image from '@rollup/plugin-image'; // For handling images
+import svgr from '@svgr/rollup'; // For handling SVG icons
+ 
 export default {
   input: 'src/index.js',
   output: {
@@ -62,6 +64,8 @@ export default {
         minifyCSS: true,
         minifyJS: true,
       },
-    })
+    }),
+    image(), // For handling images
+    svgr(), // For handling SVG icons
   ],
 };
