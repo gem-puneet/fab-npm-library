@@ -1,6 +1,6 @@
 {
   "name": "fab-plugins-library",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A custom npm package containing reusable components and utilities.",
   "main": "dist/fab-plugins-library.js",
   "type": "module",

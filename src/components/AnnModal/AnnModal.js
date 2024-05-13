@@ -1,3 +1,5 @@
+import './AnnModal.css'; // Import CSS file
+ 
 const questionsAnswers = [
     { button : "my button", question: "Data types in JavaScript?", answer: "Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types." },
     { button : "my button", question: "Object-oriented programming (OOP)?", answer: "OOP) is a programming paradigm that allows us to model real-world objects in our code. OOP in JavaScript is based on creating objects that have properties (features) and methods (functions that can perform actions)." },
@@ -8,42 +10,37 @@ const questionsAnswers = [
     { button : "my button", question: "Loops in JavaScript?", answer: "Loops are used to execute the same block of code repeatedly until a specified condition is met. JavaScript supports several types of loops, including for, while, and do-while loops." }
     // Add more objects as needed
 ];
-
+ 
 function openModal() {
   const modal = document.getElementById("modal");
   const modalBody = modal.querySelector('.modal-body');
   modalBody.innerHTML = ''; // Clear previous content
-  
   questionsAnswers.forEach(item => {
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('AnnModal-content-div');
-
+ 
     const contentButton = document.createElement('button');
     contentButton.innerHTML = item.button;
     contentButton.classList.add('AnnModal-content-button');
-    
     const question = document.createElement('h3');
     question.textContent = item.question;
     question.classList.add('AnnModal-content-h3');
-    
     const answer = document.createElement('p');
     answer.textContent = item.answer;
     answer.classList.add('AnnModal-content-p');
-    
     contentDiv.appendChild(contentButton);
     contentDiv.appendChild(question);
     contentDiv.appendChild(answer);
-    
     modalBody.appendChild(contentDiv);
   });
-
+ 
   modal.style.display = "block";
-
+ 
   // Close the modal when the user clicks on the close button
   modal.querySelector('.modal-header .close').onclick = function() {
     modal.style.display = "none";
   }
-
+ 
   // Close the modal when the user clicks anywhere outside of it
   window.onclick = function(event) {
     if (event.target == modal) {
@@ -51,5 +48,5 @@ function openModal() {
     }
   }
 }
-
+ 
 export default openModal;

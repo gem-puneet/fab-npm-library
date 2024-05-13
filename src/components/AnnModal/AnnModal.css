@@ -1,3 +1,4 @@
+/* AnnModal.css */
 .AnnModal-modal {
     display: none;
     position: fixed;
@@ -10,7 +11,7 @@
     backdrop-filter: blur(5px);
     /* Apply blur effect */
 }
-
+ 
 .AnnModal-modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -23,7 +24,7 @@
     height: 60%;
     border-radius: 12px;
 }
-
+ 
 .AnnModal-modal-header {
     width: 100%;
     /* Set width of the div */
@@ -42,12 +43,12 @@
     justify-content: space-between;
     border-radius: 12px 12px 0px 0px;
 }
-
+ 
 .AnnModal-new-img {
     height: 70px;
     padding-top: 20px;
 }
-
+ 
 .AnnModal-modal-title {
     /* margin: 0;
     flex-grow: 1; Fill remaining space
@@ -56,7 +57,7 @@
     font-weight: 400;
     padding-right: 20px;
 }
-
+ 
 .AnnModal-close {
     color: white;
     font-size: 28px;
@@ -64,13 +65,13 @@
     cursor: pointer;
     margin-right: 10px;
 }
-
+ 
 .AnnModal-close:hover,
 .AnnModal-close:focus {
     color: #000;
     text-decoration: none;
 }
-
+ 
 .AnnModal-modal-body {
     padding: 0 20px;
     overflow-y: scroll;
@@ -80,12 +81,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
+ 
 .AnnModal-content-div {
     padding: 10px;
     /* Add padding */
 }
-
+ 
 .AnnModal-content-button {
     background-color: #FF9F3F;
     color: white;
@@ -94,11 +95,11 @@
     border: none;
     border-radius: 20px;
 }
-
+ 
 .AnnModal-content-h3 {
     font-size: 14px;
 }
-
+ 
 .AnnModal-content-p {
     font-size: 13px;
 }
