@@ -1,3 +1,5 @@
+import './AnnModal.css'; // Import CSS file
+ 
 const questionsAnswers = [
     { button: "my button", question: "Data types in JavaScript?", answer: "Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types." },
     { button: "my button", question: "Object-oriented programming (OOP)?", answer: "OOP) is a programming paradigm that allows us to model real-world objects in our code. OOP in JavaScript is based on creating objects that have properties (features) and methods (functions that can perform actions)." },
@@ -8,7 +10,7 @@ const questionsAnswers = [
     { button: "my button", question: "Loops in JavaScript?", answer: "Loops are used to execute the same block of code repeatedly until a specified condition is met. JavaScript supports several types of loops, including for, while, and do-while loops." }
     // Add more objects as needed
 ];
-
+ 
 function openModal() {
     // Ensure DOM content is loaded before accessing elements
     document.addEventListener("DOMContentLoaded", function () {
@@ -61,5 +63,5 @@ function openModal() {
         }
     });
 }
-
+ 
 export default openModal;
