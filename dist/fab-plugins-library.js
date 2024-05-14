@@ -727,8 +727,10 @@
             <img src="${img$1}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
             <span class="AnnModal-close">×</span>
-            <div class="AnnModal-background-svg">${img}</div>
         `;
+        
+            // Set background SVG for modal header
+            modalHeader.style.backgroundImage = `url(${img})`;
         
             const modalBody = document.createElement("div");
             modalBody.classList.add("AnnModal-modal-body");
