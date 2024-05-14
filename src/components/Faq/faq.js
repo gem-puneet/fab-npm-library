@@ -1,10 +1,24 @@
 import "./faq.css";
+var faqItems = [
+    { question: "How to create my account in FAB?", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How to create my account in FAB?", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" },
+    { question: "How can I access Fab online banking", answer: "Dummy text" }
+];
+var faqOuterDiv = document.getElementsByClassName('faq-container-outer')[0];
 export class FAQComponent {
-    constructor(containerSelector, faqItems) {
-        this.container = document.querySelector(containerSelector);
-        this.faqItems = faqItems;
+    constructor() {
     }
-
     createHeader() {
         const header = document.createElement("div");
         header.classList.add("faq-container-header");
@@ -22,7 +36,7 @@ export class FAQComponent {
         headerText.appendChild(faqTitle);
         headerText.appendChild(svgImage);
         header.appendChild(headerText);
-        this.container.appendChild(header);
+        faqOuterDiv.appendChild(header);
     }
 
     createFAQComponent() {
@@ -44,7 +58,7 @@ export class FAQComponent {
 
         const handleInputbox = () => {
             const inputValue = inputElement.value.trim().toLowerCase();
-            this.faqItems.forEach(function (faqItem, index) {
+            faqItems.forEach(function (faqItem, index) {
                 const faqContainer = document.getElementById("questions" + (index + 1));
                 const image = document.getElementById("img" + (index + 1));
                 if (faqItem.question.toLowerCase().includes(inputValue)) {
@@ -76,7 +90,7 @@ export class FAQComponent {
         const outerDiv = document.createElement("div");
         outerDiv.classList.add("faq-outer-div");
 
-        this.faqItems.forEach(function (faqItem, index) {
+        faqItems.forEach(function (faqItem, index) {
             const faqContainer = document.createElement("div");
             faqContainer.classList.add("faq-questions-box");
             faqContainer.id = "questions" + (index + 1);
@@ -104,32 +118,14 @@ export class FAQComponent {
             });
             outerDiv.appendChild(queImage);
         });
-
+        
         bodyContainer.appendChild(outerDiv);
-        this.container.appendChild(bodyContainer);
+        faqOuterDiv.appendChild(bodyContainer);
     }
 }
 
 
-
 // document.addEventListener("DOMContentLoaded", function () {
-//     var faqItems = [
-//         { question: "How to create my account in FAB?", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How to create my account in FAB?", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" },
-//         { question: "How can I access Fab online banking", answer: "Dummy text" }
-//     ];
-
-//     var faqComponent = new FAQComponent(".faq-container-outer", faqItems);
+//     var faqComponent = new FAQComponent();
 //     faqComponent.createFAQComponent();
 // });
