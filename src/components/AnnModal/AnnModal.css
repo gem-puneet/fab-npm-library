@@ -30,8 +30,6 @@
     /* Set width of the div */
     height: 50px;
     /* Set height of the div */
-    background-image: url(${AnnouncementStrip}); /* Use the imported image */
-    /* Specify the path to your SVG file */
     background-size: 100% auto;
     /* Adjusts the size of the background image to cover the entire width and scale the height proportionally */
     background-repeat: no-repeat;
