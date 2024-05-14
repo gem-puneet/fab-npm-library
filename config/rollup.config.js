@@ -35,6 +35,7 @@ import cssnano from 'cssnano';
 import html from 'rollup-plugin-html';
 import image from '@rollup/plugin-image'; // For handling images
 import svgr from '@svgr/rollup'; // For handling SVG icons
+import url from 'rollup-plugin-url'; //For handle SVG images
  
 export default {
   input: 'src/index.js',
@@ -67,5 +68,10 @@ export default {
     }),
     image(), // For handling images
     svgr(), // For handling SVG icons
+    url({
+      limit: 10 * 1024,
+      include: ['**/*.svg'],
+      emitFiles: true 
+    })
   ],
 };
