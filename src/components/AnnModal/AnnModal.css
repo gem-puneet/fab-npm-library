@@ -49,6 +49,12 @@
     padding-top: 20px;
 }
 
+.AnnModal-new-imgg{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
 /* Modal Title */
 .AnnModal-modal-title {
     font-size: 20px;
