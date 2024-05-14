@@ -1,30 +1,43 @@
-import './AnnModal.css'; // Import CSS file
- 
-const questionsAnswers = [
-    { button: "my button", question: "Data types in JavaScript?", answer: "Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types." },
-    { button: "my button", question: "Object-oriented programming (OOP)?", answer: "OOP) is a programming paradigm that allows us to model real-world objects in our code. OOP in JavaScript is based on creating objects that have properties (features) and methods (functions that can perform actions)." },
-    { button: "my button", question: "Scope?", answer: "Scope determines the accessibility of variables, objects, and functions from different parts of the code." },
-    { button: "my button", question: "Functions in JavaScript?", answer: "Functions are blocks of reusable code that perform a specific task. In JavaScript, functions are first-class objects, which means they can be passed around like any other value." },
-    { button: "my button", question: "Arrays in JavaScript?", answer: "Arrays are special types of objects that store multiple values in a single variable. They are used to store collections of data, such as lists of items or sets of values." },
-    { button: "my button", question: "Conditional statements in JavaScript?", answer: "Conditional statements are used to execute different code based on different conditions. The most common conditional statements in JavaScript are if, else if, and else." },
-    { button: "my button", question: "Loops in JavaScript?", answer: "Loops are used to execute the same block of code repeatedly until a specified condition is met. JavaScript supports several types of loops, including for, while, and do-while loops." }
-    // Add more objects as needed
-];
- 
-function openModal() {
-    // Ensure DOM content is loaded before accessing elements
-    console.log("openModal clicked");
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("component loaded");
-        const modal = document.getElementById("modal");
-        const modalBody = modal.querySelector('.AnnModal-modal-body');
-        if (!modal || !modalBody) {
-            console.error("Modal element or modal body not found.");
-            return;
-        }
+// AnnModal.js
+import "./AnnModal.css";
 
-        // Clear previous content
-        modalBody.innerHTML = '';
+const AnnModal = (options) => {
+    const { questionsAnswers, onClose } = options;
+
+    // Load CSS file dynamically
+    // const loadCssFile = (url) => {
+    //     const link = document.createElement('link');
+    //     link.rel = 'stylesheet';
+    //     link.href = url;
+    //     document.head.appendChild(link);
+    // };
+
+    // loadCssFile('./AnnModal.css'); // Load the CSS file
+    
+    const createModal = () => {
+        console.log("abc");
+        // Create modal elements
+        const modal = document.createElement("div");
+        modal.id = "modal";
+        modal.classList.add("AnnModal-modal");
+
+        const modalContent = document.createElement("div");
+        modalContent.classList.add("AnnModal-modal-content");
+
+        const modalHeader = document.createElement("div");
+        modalHeader.classList.add("AnnModal-modal-header");
+        modalHeader.innerHTML = `
+            <img src="./New.svg" alt="icon" class="AnnModal-new-img">
+            <h2 class="AnnModal-modal-title">Announcements!!!</h2>
+            <span class="AnnModal-close">&times;</span>
+        `;
+        console.log("mno");
+        const modalBody = document.createElement("div");
+        modalBody.classList.add("AnnModal-modal-body");
+
+        modalContent.appendChild(modalHeader);
+        modalContent.appendChild(modalBody);
+        modal.appendChild(modalContent);
 
         // Populate modal content
         questionsAnswers.forEach(item => {
@@ -50,20 +63,43 @@ function openModal() {
             modalBody.appendChild(contentDiv);
         });
 
-        modal.style.display = "block";
+        // Append modal to the document body
+        document.body.appendChild(modal);
+        console.log("xyz");
+        // Event listeners for closing modal
+        modal.querySelector('.AnnModal-close').addEventListener('click', () => {
+            closeModal();
+        });
 
-        // Close the modal when the user clicks on the close button
-        modal.querySelector('.modal-header .close').onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // Close the modal when the user clicks anywhere outside of it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
             }
+        });
+
+        return modal;
+    };
+
+    const openModal = () => {
+        console.log("open modal clicked");
+        const modal = createModal();
+        console.log("open modal clicked 2");
+        modal.style.display = "block";
+    };
+
+    const closeModal = () => {
+        console.log("close modal clicked");
+        const modal = document.getElementById("modal");
+        if (modal) {
+            modal.style.display = "none";
+            onClose(); // Call onClose callback provided by the user
         }
-    });
-}
- 
-export default openModal;
+    };
+
+    return {
+        openModal,
+        closeModal
+    };
+};
+
+export default AnnModal;
