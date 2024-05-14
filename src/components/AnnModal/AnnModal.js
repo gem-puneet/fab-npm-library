@@ -1,5 +1,6 @@
 // AnnModal.js
 import "./AnnModal.css";
+import AnnouncementStrip from "./AnnouncementStrip.svg";
 import newSvg from "./New.svg";
 
 const AnnModal = (options) => {
