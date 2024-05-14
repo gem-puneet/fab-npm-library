@@ -18,7 +18,7 @@ const AnnModal = (options) => {
         modalHeader.classList.add("AnnModal-modal-header");
         
         // Dynamically set the background image style
-        modalHeader.style.backgroundImage = `url(${AnnouncementStrip})`;
+        modalHeader.style.backgroundImage = `url('data:image/svg+xml,${encodeURIComponent(AnnouncementStrip)}')`;
         // Remove background-image property from CSS to avoid conflicts
         // modalHeader.style.backgroundImage = `url(${AnnouncementStrip})`;
     
