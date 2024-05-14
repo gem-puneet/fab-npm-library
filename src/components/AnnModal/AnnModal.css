@@ -30,6 +30,7 @@
 
 /* Modal Header */
 .AnnModal-modal-header {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjE5IiBoZWlnaHQ9IjgyIiB2aWV3Qm94PSIwIDAgNjE5IDgyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZWxsaXBzZSBjeD0iNjMuNSIgY3k9IjU1LjkzODIiIHJ4PSIxMS41IiByeT0iMTEuNDczNCIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHJlY3QgeT0iOS41NDU5IiB3aWR0aD0iNjE5IiBoZWlnaHQ9IjcxLjgzMzMiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84NTlfNjc5NykiLz4KPGVsbGlwc2UgY3g9IjQ5My41IiBjeT0iMjcuMDA1NCIgcng9IjkuNSIgcnk9IjkuNDc4MDEiIGZpbGw9IiNERTdCMzEiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjxlbGxpcHNlIGN4PSI1MjcuNSIgY3k9IjY0LjkxNzUiIHJ4PSI5LjUiIHJ5PSI5LjQ3ODAxIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNNTU2LjY3NCAxMy41NzgxTDU1Ni42NzQgNjAuNjE0MUw1MTUuOTQgMzcuMDk2MUw1NTYuNjc0IDEzLjU3ODFaIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNOTMuMDY0NSAyNi41MTA1TDEzMS4zOTMgMjYuNTEwNUwxMTIuMjI5IDU5LjcwNDFMOTMuMDY0NSAyNi41MTA1WiIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl84NTlfNjc5NyIgeDE9IjAiIHkxPSI0NS40NjI2IiB4Mj0iNjE5IiB5Mj0iNDUuNDYyNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjREU2QjMxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0REQTQzMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=);
     width: 100%;
     height: 50px;
     color: white;
@@ -45,10 +46,8 @@
 
 /* New Image */
 .AnnModal-new-img {
-    height: 50px;
-    /* padding-top: 20px; */
-    width: 50px;
-    margin-right: 10px;
+    height: 70px;
+    padding-top: 20px;
 }
 
 /* Modal Title */
