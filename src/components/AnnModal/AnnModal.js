@@ -1,21 +1,11 @@
-// AnnModal.js
 import "./AnnModal.css";
+import newSvg from "./New.svg";
+import AnnouncementStrip from "./AnnouncementStrip.svg";
 
 const AnnModal = (options) => {
     const { questionsAnswers, onClose } = options;
 
-    // Load CSS file dynamically
-    // const loadCssFile = (url) => {
-    //     const link = document.createElement('link');
-    //     link.rel = 'stylesheet';
-    //     link.href = url;
-    //     document.head.appendChild(link);
-    // };
-
-    // loadCssFile('./AnnModal.css'); // Load the CSS file
-    
     const createModal = () => {
-        console.log("abc");
         // Create modal elements
         const modal = document.createElement("div");
         modal.id = "modal";
@@ -26,12 +16,16 @@ const AnnModal = (options) => {
 
         const modalHeader = document.createElement("div");
         modalHeader.classList.add("AnnModal-modal-header");
+        
+        // Dynamically set the background image style
+        modalHeader.style.backgroundImage = `url(${AnnouncementStrip})`;
+        console.log("abc")
         modalHeader.innerHTML = `
-            <img src="./New.svg" alt="icon" class="AnnModal-new-img">
+            <img src="${newSvg}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
             <span class="AnnModal-close">&times;</span>
         `;
-        console.log("mno");
+
         const modalBody = document.createElement("div");
         modalBody.classList.add("AnnModal-modal-body");
 
@@ -65,7 +59,7 @@ const AnnModal = (options) => {
 
         // Append modal to the document body
         document.body.appendChild(modal);
-        console.log("xyz");
+
         // Event listeners for closing modal
         modal.querySelector('.AnnModal-close').addEventListener('click', () => {
             closeModal();
@@ -81,14 +75,11 @@ const AnnModal = (options) => {
     };
 
     const openModal = () => {
-        console.log("open modal clicked");
         const modal = createModal();
-        console.log("open modal clicked 2");
         modal.style.display = "block";
     };
 
     const closeModal = () => {
-        console.log("close modal clicked");
         const modal = document.getElementById("modal");
         if (modal) {
             modal.style.display = "none";

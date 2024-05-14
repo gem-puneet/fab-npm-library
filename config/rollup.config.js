@@ -74,4 +74,5 @@ export default {
       emitFiles: true 
     })
   ],
+  external: ['react'], // Specify external dependencies
 };
