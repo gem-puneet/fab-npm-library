@@ -722,16 +722,12 @@
         
             const modalHeader = document.createElement("div");
             modalHeader.classList.add("AnnModal-modal-header");
-            
-            // Dynamically set the background image style
-            modalHeader.style.backgroundImage = `url('data:image/svg+xml,${encodeURIComponent(img)}')`;
-            // Remove background-image property from CSS to avoid conflicts
-            // modalHeader.style.backgroundImage = `url(${AnnouncementStrip})`;
         
             modalHeader.innerHTML = `
             <img src="${img$1}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
-            <span class="AnnModal-close">&times;</span>
+            <span class="AnnModal-close">×</span>
+            <div class="AnnModal-background-svg">${img}</div>
         `;
         
             const modalBody = document.createElement("div");

@@ -1,6 +1,6 @@
 import "./AnnModal.css";
 import newSvg from "./New.svg";
-import AnnouncementStrip from "./AnnouncementStrip.svg";
+import AnnouncementStripBG from "./AnnouncementStrip.svg";
 
 const AnnModal = (options) => {
     const { questionsAnswers, onClose } = options;
@@ -16,16 +16,12 @@ const AnnModal = (options) => {
     
         const modalHeader = document.createElement("div");
         modalHeader.classList.add("AnnModal-modal-header");
-        
-        // Dynamically set the background image style
-        modalHeader.style.backgroundImage = `url('data:image/svg+xml,${encodeURIComponent(AnnouncementStrip)}')`;
-        // Remove background-image property from CSS to avoid conflicts
-        // modalHeader.style.backgroundImage = `url(${AnnouncementStrip})`;
     
         modalHeader.innerHTML = `
             <img src="${newSvg}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
-            <span class="AnnModal-close">&times;</span>
+            <span class="AnnModal-close">×</span>
+            <div class="AnnModal-background-svg">${AnnouncementStripBG}</div>
         `;
     
         const modalBody = document.createElement("div");
