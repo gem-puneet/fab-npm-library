@@ -68,4 +68,5 @@ export default {
     image(), // For handling images
     svgr(), // For handling SVG icons
   ],
+  external: ['react'], // Specify external dependencies
 };

@@ -1,5 +1,6 @@
 // AnnModal.js
 import "./AnnModal.css";
+import newSvg from "./New.svg";
 
 const AnnModal = (options) => {
     const { questionsAnswers, onClose } = options;
@@ -27,7 +28,7 @@ const AnnModal = (options) => {
         const modalHeader = document.createElement("div");
         modalHeader.classList.add("AnnModal-modal-header");
         modalHeader.innerHTML = `
-            <img src="./New.svg" alt="icon" class="AnnModal-new-img">
+            <img src="${newSvg}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
             <span class="AnnModal-close">&times;</span>
         `;
