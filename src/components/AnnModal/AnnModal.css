@@ -34,7 +34,7 @@
     /* Adjusts the size of the background image to cover the entire width and scale the height proportionally */
     background-repeat: no-repeat;
     /* Prevent the background image from repeating */
-    background-size: cover;
+    /* background-size: cover; Remove this line */
     color: white;
     display: flex;
     align-items: center;
