@@ -807,10 +807,25 @@
         };
     };
 
+    var faqItems = [
+        { question: "How to create my account in FAB?", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How to create my account in FAB?", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" },
+        { question: "How can I access Fab online banking", answer: "Dummy text" }
+    ];
+    var faqOuterDiv = document.getElementsByClassName('faq-container-outer')[0];
     class FAQComponent {
-        constructor(containerSelector, faqItems) {
-            this.container = document.querySelector(containerSelector);
-            this.faqItems = faqItems;
+        constructor() {
         }
         createHeader() {
             const header = document.createElement("div");
