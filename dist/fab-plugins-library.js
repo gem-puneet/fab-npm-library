@@ -823,10 +823,11 @@
         { question: "How can I access Fab online banking", answer: "Dummy text" },
         { question: "How can I access Fab online banking", answer: "Dummy text" }
     ];
-    var faqOuterDiv = document.getElementsByClassName('faq-container-outer')[0];
+    document.getElementsByClassName('faq-container-outer')[0];
     class FAQComponent {
-        constructor() {
-        }
+        constructor(containerElement) {
+            this.faqOuterDiv = containerElement;
+          }
         createHeader() {
             const header = document.createElement("div");
             header.classList.add("faq-container-header");
@@ -844,7 +845,7 @@
             headerText.appendChild(faqTitle);
             headerText.appendChild(svgImage);
             header.appendChild(headerText);
-            faqOuterDiv.appendChild(header);
+            this.faqOuterDiv.appendChild(header);
         }
 
         createFAQComponent() {
@@ -928,7 +929,7 @@
             });
             
             bodyContainer.appendChild(outerDiv);
-            faqOuterDiv.appendChild(bodyContainer);
+            this.faqOuterDiv.appendChild(bodyContainer);
         }
     }
 
