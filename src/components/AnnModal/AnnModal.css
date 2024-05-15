@@ -117,15 +117,19 @@
 .AnnModal-read-more {
     color: blue; /* Customize link color */
     cursor: pointer;
+    display: block; /* Ensure the link occupies its own line */
+    margin-top: 10px; /* Adjust margin as needed */
 }
 
-/* Expanded Content */
+/* Truncate paragraph content to show only two lines initially */
 .AnnModal-content-div .AnnModal-content-p {
     overflow: hidden;
     max-height: calc(2 * 1.2em); /* Two lines of text */
     margin: 0; /* Reset margin */
 }
 
+/* Expanded Content */
 .AnnModal-content-div-expanded .AnnModal-content-p {
-    max-height: none;
+    max-height: none; /* Show full content when expanded */
 }
+
