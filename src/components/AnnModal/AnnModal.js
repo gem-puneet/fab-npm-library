@@ -115,7 +115,7 @@ const AnnModal = (options) => {
             console.error("Invalid element:", element);
             return 0; // Return a default line height
         }
-        console.log("Line height:", window.getComputedStyle(element).getPropertyValue("line-height"));
+        console.log("Line-height:", window.getComputedStyle(element).getPropertyValue("height"));
 
         const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
         console.log("Line height:", lineHeight);
