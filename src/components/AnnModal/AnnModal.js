@@ -106,7 +106,7 @@ const AnnModal = (options) => {
 
     // Function to check if the paragraph content exceeds a certain height
     const isLongContent = (element) => {
-        return element.clientHeight > 2 * parseFloat(getComputedStyle(element).lineHeight);
+        return element.scrollHeight > 2 * parseFloat(getComputedStyle(element).lineHeight);
     };
 
     const openModal = () => {
