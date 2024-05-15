@@ -124,7 +124,9 @@
 /* Truncate paragraph content to show only two lines initially */
 .AnnModal-content-div .AnnModal-content-p {
     overflow: hidden;
-    max-height: calc(2 * 1.2em); /* Two lines of text */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit number of lines to display */
+    -webkit-box-orient: vertical;
     margin: 0; /* Reset margin */
 }
 
