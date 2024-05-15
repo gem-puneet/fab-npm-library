@@ -1,3 +1,8 @@
+import ChatbotIcon from "./assets/icon/Chatbot.svg";
+import MessageIconImg from "./assets/icon/MessageIocn.svg";
+import SearchIcon from "./assets/icon/search.svg";
+import CircleDownIcon from "./assets/icon/CircleDown.svg";
+import CircleUpIcon from "./assets/icon/CircleUp.svg";
  import "./faq.css";
 
 var faqItems = [
@@ -29,11 +34,11 @@ export class FAQComponent {
 
         const svgImage = document.createElement("img");
         svgImage.classList.add("faq-boat-img");
-        svgImage.setAttribute("src", "./assets/icon/Chatbot.svg");
+        svgImage.setAttribute("src", ChatbotIcon);
 
         const MessageIcon = document.createElement("img");
         MessageIcon.classList.add("faq-msz-img");
-        MessageIcon.setAttribute("src", "./assets/icon/MessageIocn.svg");
+        MessageIcon.setAttribute("src", MessageIconImg);
         
         const closeIcon = document.createElement("span");
         closeIcon.classList.add("close-icon");
@@ -62,7 +67,7 @@ export class FAQComponent {
         const searchImage = document.createElement("img");
 
         searchImage.classList.add("faq-search-img");
-        searchImage.setAttribute("src", "./assets/icon/search.svg");
+        searchImage.setAttribute("src", SearchIcon);
         bodyContainer.appendChild(searchImage);
 
         inputElement.classList.add("faq-search-box");
@@ -94,9 +99,9 @@ export class FAQComponent {
             answerElement.classList.toggle("faq-hidden");
             const queImage = document.getElementById("img" + id);
             if (answerElement.classList.contains("faq-hidden")) {
-                queImage.setAttribute("src", "./assets/icon/CircleDown.svg");
+                queImage.setAttribute("src", CircleDownIcon);
             } else {
-                queImage.setAttribute("src", "./assets/icon/CircleUp.svg");
+                queImage.setAttribute("src", CircleUpIcon);
             }
         }
 
@@ -125,7 +130,7 @@ export class FAQComponent {
             const queImage = document.createElement("img");
             queImage.id = "img" + (index + 1);
             queImage.classList.add("faq-que-img");
-            queImage.setAttribute("src", "./assets/icon/CircleDown.svg");
+            queImage.setAttribute("src", CircleDownIcon);
             queImage.addEventListener("click", function () {
                 toggleFAQItem(index + 1);
             });
