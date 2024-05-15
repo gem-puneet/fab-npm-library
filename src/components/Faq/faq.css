@@ -4,6 +4,31 @@
     height: 400px;
     background: #F8FAF8;
 }
+.position-top-right {
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+
+.position-top-left {
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.position-bottom-right {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+.position-bottom-left {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+}
+
+
 
  .faq-container-header {
     background: linear-gradient(to right, #0745B0, #1455C3, #2466D9);
