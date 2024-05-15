@@ -10,16 +10,15 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-    /* Apply blur effect */
+    backdrop-filter: blur(5px);/* Apply blur effect */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Modal Content */
 .AnnModal-modal-content {
     background-color: #fefefe;
     margin: 10% auto;
-    padding: 0;
-    /* Remove padding */
+    padding: 0;/* Remove padding */
     border: 1px solid #888;
     max-width: 40%;
     width: 400px;
@@ -30,7 +29,6 @@
 
 /* Modal Header */
 .AnnModal-modal-header {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjE5IiBoZWlnaHQ9IjgyIiB2aWV3Qm94PSIwIDAgNjE5IDgyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZWxsaXBzZSBjeD0iNjMuNSIgY3k9IjU1LjkzODIiIHJ4PSIxMS41IiByeT0iMTEuNDczNCIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHJlY3QgeT0iOS41NDU5IiB3aWR0aD0iNjE5IiBoZWlnaHQ9IjcxLjgzMzMiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84NTlfNjc5NykiLz4KPGVsbGlwc2UgY3g9IjQ5My41IiBjeT0iMjcuMDA1NCIgcng9IjkuNSIgcnk9IjkuNDc4MDEiIGZpbGw9IiNERTdCMzEiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjxlbGxpcHNlIGN4PSI1MjcuNSIgY3k9IjY0LjkxNzUiIHJ4PSI5LjUiIHJ5PSI5LjQ3ODAxIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNNTU2LjY3NCAxMy41NzgxTDU1Ni42NzQgNjAuNjE0MUw1MTUuOTQgMzcuMDk2MUw1NTYuNjc0IDEzLjU3ODFaIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNOTMuMDY0NSAyNi41MTA1TDEzMS4zOTMgMjYuNTEwNUwxMTIuMjI5IDU5LjcwNDFMOTMuMDY0NSAyNi41MTA1WiIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl84NTlfNjc5NyIgeDE9IjAiIHkxPSI0NS40NjI2IiB4Mj0iNjE5IiB5Mj0iNDUuNDYyNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjREU2QjMxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0REQTQzMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=);
     width: 100%;
     height: 50px;
     color: white;
@@ -39,10 +37,10 @@
     justify-content: space-between;
     border-radius: 12px 12px 0px 0px;
     /* Set background image for modal header */
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjE5IiBoZWlnaHQ9IjcxIiB2aWV3Qm94PSIwIDAgNjE5IDcxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfOTY0XzEyMjcpIj4KPGVsbGlwc2UgY3g9IjYzLjUiIGN5PSI0NS45MzgyIiByeD0iMTEuNSIgcnk9IjExLjQ3MzQiIGZpbGw9IiNEREE0MzAiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjxyZWN0IHk9Ii0wLjQ1NDEwMiIgd2lkdGg9IjYxOSIgaGVpZ2h0PSI3MS44MzMzIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfOTY0XzEyMjcpIi8+CjxlbGxpcHNlIGN4PSI0OTMuNSIgY3k9IjE3LjAwNTQiIHJ4PSI5LjUiIHJ5PSI5LjQ3ODAxIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8ZWxsaXBzZSBjeD0iNTI3LjUiIGN5PSI1NC45MTc1IiByeD0iOS41IiByeT0iOS40NzgwMSIgZmlsbD0iI0RFN0IzMSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHBhdGggZD0iTTU1Ni42NzQgMy41NzgxMUw1NTYuNjc0IDUwLjYxNDFMNTE1Ljk0IDI3LjA5NjFMNTU2LjY3NCAzLjU3ODExWiIgZmlsbD0iI0RFN0IzMSIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHBhdGggZD0iTTkzLjA2NDUgMTYuNTEwNUwxMzEuMzkzIDE2LjUxMDVMMTEyLjIyOSA0OS43MDQxTDkzLjA2NDUgMTYuNTEwNVoiIGZpbGw9IiNEREE0MzAiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjwvZz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl85NjRfMTIyNyIgeDE9IjAiIHkxPSIzNS40NjI2IiB4Mj0iNjE5IiB5Mj0iMzUuNDYyNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjREU2QjMxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0REQTQzMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzk2NF8xMjI3Ij4KPHJlY3Qgd2lkdGg9IjYxOSIgaGVpZ2h0PSI3MSIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K);
     background-size: cover; /* Adjusts the size of the background image to cover the entire width and height */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
-
 
 /* New Image */
 .AnnModal-new-img {
@@ -76,8 +74,7 @@
 .AnnModal-modal-body {
     padding: 0 20px;
     overflow-y: scroll;
-    max-height: calc(100% - 50px);
-    /* Adjust max height */
+    max-height: calc(100% - 50px);/* Adjust max height */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -95,30 +92,15 @@
     padding: 3px 10px;
     border: none;
     border-radius: 20px;
+    margin-bottom: 8px;
 }
 
 /* Content Header */
 .AnnModal-content-h3 {
     font-size: 14px;
-}
-
-/* Content Paragraph */
-/* .AnnModal-content-p {
-    font-size: 13px;
-} */
-
-.AnnModal-horizontal-line {
-    border: none;
-    border-top: 1px solid #ccc; /* Adjust color as needed */
-    margin: 10px 0; /* Adjust spacing as needed */
-}
-
-/* Read More Link */
-.AnnModal-read-more {
-    color: blue; /* Customize link color */
-    cursor: pointer;
-    display: block; /* Ensure the link occupies its own line */
-    margin-top: 10px; /* Adjust margin as needed */
+    margin-bottom: 4px;
+    font-weight: 700;
+    opacity: 0.9;
 }
 
 /* Content Paragraph */
@@ -126,16 +108,25 @@
     font-size: 13px;
     line-height: 20px; /* Adjust the line height value as per your design */
     position: relative;
+    opacity: 0.8;
 }
 
-/* Truncate paragraph content to show only two lines initially */
-/* .AnnModal-content-div .AnnModal-content-p {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; Limit number of lines to display
-    -webkit-box-orient: vertical;
-    margin: 0; Reset margin
-} */
+/* Read More Link */
+.AnnModal-read-more {
+    color: blue; /* Customize link color */
+    cursor: pointer;
+    display: block; /* Ensure the link occupies its own line */
+    margin-top: 4px; /* Adjust margin as needed */
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.AnnModal-horizontal-line {
+    border: none;
+    border-top: 1px solid #ccc; /* Adjust color as needed */
+    margin: 15px 0; /* Adjust spacing as needed */
+    opacity: 0.5;
+}
 
 /* Expanded Content */
 .AnnModal-content-div-expanded .AnnModal-content-p {
