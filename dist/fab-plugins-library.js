@@ -815,6 +815,12 @@
             console.log("Calculating line height...");
             console.log("Element:", element);
             console.log("Computed style:", window.getComputedStyle(element));
+            if (!(element instanceof Element)) {
+                console.error("Invalid element:", element);
+                return 0; // Return a default line height
+            }
+            console.log("Line height:", window.getComputedStyle(element).getPropertyValue("line-height"));
+
             const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
             console.log("Line height:", lineHeight);
             return lineHeight;
