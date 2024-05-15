@@ -34,7 +34,7 @@ const AnnModal = (options) => {
         modal.appendChild(modalContent);
 
         // Populate modal content
-        let previousContentDiv;
+        const contentDivs = [];
 
         // Populate modal content
         questionsAnswers.forEach((item, index) => {
@@ -58,16 +58,23 @@ const AnnModal = (options) => {
             contentDiv.appendChild(answer);
 
             modalBody.appendChild(contentDiv);
+            contentDivs.push(contentDiv);
 
             // Add horizontal line between content divs (except after the last one)
-            if (previousContentDiv && index !== questionsAnswers.length - 1) {
+            if (index !== questionsAnswers.length - 1) {
                 const hr = document.createElement('hr');
                 hr.classList.add('AnnModal-horizontal-line');
-                modalBody.insertBefore(hr, contentDiv);
+                modalBody.insertBefore(hr, contentDiv.nextSibling);
             }
 
-            previousContentDiv = contentDiv;
         });
+
+        // Add horizontal line between second last and last content divs
+        if (contentDivs.length > 1) {
+            const hr = document.createElement('hr');
+            hr.classList.add('AnnModal-horizontal-line');
+            modalBody.insertBefore(hr, contentDivs[contentDivs.length - 1]);
+        }
 
         // Append modal to the document body
         document.body.appendChild(modal);
