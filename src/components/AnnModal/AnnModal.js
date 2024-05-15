@@ -87,27 +87,29 @@ const AnnModal = (options) => {
             //     }
             // }, 0);
 
-            if (answer.scrollHeight > twoLinesHeight) {
-                console.log("678")
-                const readMoreLink = document.createElement('a');
-                readMoreLink.textContent = 'Read More';
-                readMoreLink.classList.add('AnnModal-read-more');
-                console.log("789")
-                readMoreLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    if (contentDiv.classList.contains('AnnModal-content-div-expanded')) {
-                        answer.style.maxHeight = `${twoLinesHeight}px`; // Truncate to two lines when collapsing
-                        readMoreLink.textContent = 'Read More';
-                    } else {
-                        answer.style.maxHeight = null; // Show full content when expanding
-                        readMoreLink.textContent = 'Read Less';
-                    }
-                    console.log("1678")
-                    contentDiv.classList.toggle('AnnModal-content-div-expanded');
-                });
-    
-                contentDiv.appendChild(readMoreLink);
-            }
+            setTimeout(() => {
+                if (answer.scrollHeight > twoLinesHeight) {
+                    console.log("678")
+                    const readMoreLink = document.createElement('a');
+                    readMoreLink.textContent = 'Read More';
+                    readMoreLink.classList.add('AnnModal-read-more');
+                    console.log("789")
+                    readMoreLink.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        if (contentDiv.classList.contains('AnnModal-content-div-expanded')) {
+                            answer.style.maxHeight = `${twoLinesHeight}px`; // Truncate to two lines when collapsing
+                            readMoreLink.textContent = 'Read More';
+                        } else {
+                            answer.style.maxHeight = null; // Show full content when expanding
+                            readMoreLink.textContent = 'Read Less';
+                        }
+                        console.log("1678")
+                        contentDiv.classList.toggle('AnnModal-content-div-expanded');
+                    });
+        
+                    contentDiv.appendChild(readMoreLink);
+                }
+            }, 0);
 
             modalBody.appendChild(contentDiv);
             console.log("inside isLong 6")
