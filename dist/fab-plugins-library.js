@@ -746,14 +746,14 @@
                 const question = document.createElement('h3');
                 question.textContent = item.question;
                 question.classList.add('AnnModal-content-h3');
-
+                console.log("h3 created");
                 const answer = document.createElement('p');
                 answer.textContent = item.answer;
                 answer.classList.add('AnnModal-content-p');
-
+                console.log("p created");
                 // Check if the paragraph content exceeds a certain height (equivalent to two lines)
                 if (isLongContent(answer)) {
-                    console.log("inside isLong");
+                    console.log("inside isLong 1");
                     const readMoreLink = document.createElement('a');
                     readMoreLink.textContent = 'Read More';
                     readMoreLink.classList.add('AnnModal-read-more');
@@ -805,7 +805,7 @@
 
         // Function to check if the paragraph content exceeds a certain height
         const isLongContent = (element) => {
-            console.log("inside isLong 6");
+            console.log("inside isLong 7");
             console.log("x",parseFloat(getComputedStyle(element).lineHeight));
             console.log("y",element.scrollHeight);
             return element.scrollHeight > 2 * parseFloat(getComputedStyle(element).lineHeight);
