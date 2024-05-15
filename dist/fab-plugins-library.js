@@ -738,9 +738,6 @@
             modal.appendChild(modalContent);
 
             // Populate modal content
-            const contentDivs = [];
-
-            // Populate modal content
             questionsAnswers.forEach((item, index) => {
                 const contentDiv = document.createElement('div');
                 contentDiv.classList.add('AnnModal-content-div');
@@ -762,19 +759,15 @@
                 contentDiv.appendChild(answer);
 
                 modalBody.appendChild(contentDiv);
-                contentDivs.push(contentDiv);
 
-                // Add horizontal line between content divs (except after the last one)
-                const hr = document.createElement('hr');
-                hr.classList.add('AnnModal-horizontal-line');
-                modalBody.insertBefore(hr, contentDiv.nextSibling);
+                // Add horizontal line between content divs
+                if (index !== questionsAnswers.length - 1) {
+                    const hr = document.createElement('hr');
+                    hr.classList.add('AnnModal-horizontal-line');
+                    modalBody.insertBefore(hr, contentDiv.nextSibling);
+                }
 
             });
-
-            // Remove the extra line if there's only one content div
-            if (contentDivs.length === 1) {
-                modalBody.removeChild(modalBody.lastElementChild);
-            }
 
             // Append modal to the document body
             document.body.appendChild(modal);
