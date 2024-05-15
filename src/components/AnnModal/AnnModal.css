@@ -1,4 +1,6 @@
 /* AnnModal.css */
+
+/* Modal */
 .AnnModal-modal {
     display: none;
     position: fixed;
@@ -11,7 +13,8 @@
     backdrop-filter: blur(5px);
     /* Apply blur effect */
 }
- 
+
+/* Modal Content */
 .AnnModal-modal-content {
     background-color: #fefefe;
     margin: 10% auto;
@@ -24,38 +27,37 @@
     height: 60%;
     border-radius: 12px;
 }
- 
+
+/* Modal Header */
 .AnnModal-modal-header {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjE5IiBoZWlnaHQ9IjgyIiB2aWV3Qm94PSIwIDAgNjE5IDgyIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZWxsaXBzZSBjeD0iNjMuNSIgY3k9IjU1LjkzODIiIHJ4PSIxMS41IiByeT0iMTEuNDczNCIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPHJlY3QgeT0iOS41NDU5IiB3aWR0aD0iNjE5IiBoZWlnaHQ9IjcxLjgzMzMiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl84NTlfNjc5NykiLz4KPGVsbGlwc2UgY3g9IjQ5My41IiBjeT0iMjcuMDA1NCIgcng9IjkuNSIgcnk9IjkuNDc4MDEiIGZpbGw9IiNERTdCMzEiIGZpbGwtb3BhY2l0eT0iMC4zIi8+CjxlbGxpcHNlIGN4PSI1MjcuNSIgY3k9IjY0LjkxNzUiIHJ4PSI5LjUiIHJ5PSI5LjQ3ODAxIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNNTU2LjY3NCAxMy41NzgxTDU1Ni42NzQgNjAuNjE0MUw1MTUuOTQgMzcuMDk2MUw1NTYuNjc0IDEzLjU3ODFaIiBmaWxsPSIjREU3QjMxIiBmaWxsLW9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNOTMuMDY0NSAyNi41MTA1TDEzMS4zOTMgMjYuNTEwNUwxMTIuMjI5IDU5LjcwNDFMOTMuMDY0NSAyNi41MTA1WiIgZmlsbD0iI0REQTQzMCIgZmlsbC1vcGFjaXR5PSIwLjMiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl84NTlfNjc5NyIgeDE9IjAiIHkxPSI0NS40NjI2IiB4Mj0iNjE5IiB5Mj0iNDUuNDYyNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjREU2QjMxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0REQTQzMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=);
     width: 100%;
-    /* Set width of the div */
     height: 50px;
-    /* Set height of the div */
-    background-size: 100% auto;
-    /* Adjusts the size of the background image to cover the entire width and scale the height proportionally */
-    background-repeat: no-repeat;
-    /* Prevent the background image from repeating */
-    background-size: cover;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 12px 12px 0px 0px;
+    /* Set background image for modal header */
+    background-size: cover; /* Adjusts the size of the background image to cover the entire width and height */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
- 
+
+
+/* New Image */
 .AnnModal-new-img {
     height: 70px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
- 
+
+/* Modal Title */
 .AnnModal-modal-title {
-    /* margin: 0;
-    flex-grow: 1; Fill remaining space
-    text-align: center; Center the title */
     font-size: 20px;
     font-weight: 400;
     padding-right: 20px;
 }
- 
+
+/* Close Button */
 .AnnModal-close {
     color: white;
     font-size: 28px;
@@ -63,41 +65,73 @@
     cursor: pointer;
     margin-right: 10px;
 }
- 
+
 .AnnModal-close:hover,
 .AnnModal-close:focus {
     color: #000;
     text-decoration: none;
 }
- 
+
+/* Modal Body */
 .AnnModal-modal-body {
     padding: 0 20px;
     overflow-y: scroll;
-    /* Add scrollbar */
     max-height: calc(100% - 50px);
     /* Adjust max height */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
- 
+
+/* Content Div */
 .AnnModal-content-div {
     padding: 10px;
-    /* Add padding */
 }
- 
+
+/* Content Button */
 .AnnModal-content-button {
-    background-color: #FF9F3F;
+    background-color: #ff9f3f;
     color: white;
     font-size: 11px;
     padding: 3px 10px;
     border: none;
     border-radius: 20px;
 }
- 
+
+/* Content Header */
 .AnnModal-content-h3 {
     font-size: 14px;
 }
- 
-.AnnModal-content-p {
+
+/* Content Paragraph */
+/* .AnnModal-content-p {
     font-size: 13px;
+} */
+
+.AnnModal-horizontal-line {
+    border: none;
+    border-top: 1px solid #ccc; /* Adjust color as needed */
+    margin: 10px 0; /* Adjust spacing as needed */
 }
+
+/* Read More Link */
+.AnnModal-read-more {
+    color: blue; /* Customize link color */
+    cursor: pointer;
+    display: block; /* Ensure the link occupies its own line */
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+/* Truncate paragraph content to show only two lines initially */
+.AnnModal-content-div .AnnModal-content-p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit number of lines to display */
+    -webkit-box-orient: vertical;
+    margin: 0; /* Reset margin */
+}
+
+/* Expanded Content */
+.AnnModal-content-div-expanded .AnnModal-content-p {
+    max-height: none; /* Show full content when expanded */
+}
+
