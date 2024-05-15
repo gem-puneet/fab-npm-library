@@ -875,8 +875,23 @@
             svgImage.classList.add("faq-boat-img");
             svgImage.setAttribute("src", "./assets/icon/Chatbot.svg");
 
+            const MessageIcon = document.createElement("img");
+            MessageIcon.classList.add("faq-msz-img");
+            MessageIcon.setAttribute("src", "./assets/icon/MessageIocn.svg");
+            
+            const closeIcon = document.createElement("span");
+            closeIcon.classList.add("close-icon");
+            closeIcon.textContent = "×";
+            closeIcon.addEventListener("click", function() {
+            faqOuterDiv.style.display = "none"; 
+            });
+
+            
+
             headerText.appendChild(faqTitle);
             headerText.appendChild(svgImage);
+            headerText.appendChild(MessageIcon);
+            headerText.appendChild(closeIcon);
             header.appendChild(headerText);
             this.faqOuterDiv.appendChild(header);
         }
@@ -968,7 +983,7 @@
 
 
     // document.addEventListener("DOMContentLoaded", function () {
-    //     var faqComponent = new FAQComponent();
+    //     var faqComponent = new FAQComponent('');
     //     faqComponent.createFAQComponent();
     // });
 
