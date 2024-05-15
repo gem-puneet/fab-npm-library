@@ -765,19 +765,15 @@
                 contentDivs.push(contentDiv);
 
                 // Add horizontal line between content divs (except after the last one)
-                if (index !== questionsAnswers.length - 1) {
-                    const hr = document.createElement('hr');
-                    hr.classList.add('AnnModal-horizontal-line');
-                    modalBody.insertBefore(hr, contentDiv.nextSibling);
-                }
+                const hr = document.createElement('hr');
+                hr.classList.add('AnnModal-horizontal-line');
+                modalBody.insertBefore(hr, contentDiv.nextSibling);
 
             });
 
-            // Add horizontal line between second last and last content divs
-            if (contentDivs.length > 1) {
-                const hr = document.createElement('hr');
-                hr.classList.add('AnnModal-horizontal-line');
-                modalBody.insertBefore(hr, contentDivs[contentDivs.length - 1]);
+            // Remove the extra line if there's only one content div
+            if (contentDivs.length === 1) {
+                modalBody.removeChild(modalBody.lastElementChild);
             }
 
             // Append modal to the document body
