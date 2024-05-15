@@ -21,10 +21,7 @@ const AnnModal = (options) => {
             <img src="${newSvg}" alt="icon" class="AnnModal-new-img">
             <h2 class="AnnModal-modal-title">Announcements!!!</h2>
             <span class="AnnModal-close">×</span>
-    `;
-
-        // Set background SVG for modal header
-        //modalHeader.style.backgroundImage = `url(${AnnouncementStripBG})`;
+        `;
 
         const modalBody = document.createElement("div");
         modalBody.classList.add("AnnModal-modal-body");
@@ -32,9 +29,6 @@ const AnnModal = (options) => {
         modalContent.appendChild(modalHeader);
         modalContent.appendChild(modalBody);
         modal.appendChild(modalContent);
-
-        // Populate modal content
-        const contentDivs = [];
 
         // Populate modal content
         questionsAnswers.forEach((item, index) => {
@@ -60,15 +54,15 @@ const AnnModal = (options) => {
                 readMoreLink.classList.add('AnnModal-read-more');
                 readMoreLink.href = '#'; // Add your link destination here
 
-                // Append "Read More" link to contentDiv
-                contentDiv.appendChild(readMoreLink);
-
                 // Add click event listener to toggle between full and truncated content
                 readMoreLink.addEventListener('click', (event) => {
                     event.preventDefault();
                     contentDiv.classList.toggle('AnnModal-content-div-expanded');
                     readMoreLink.textContent = contentDiv.classList.contains('AnnModal-content-div-expanded') ? 'Read Less' : 'Read More';
                 });
+
+                // Append "Read More" link to contentDiv
+                contentDiv.appendChild(readMoreLink);
             }
 
             contentDiv.appendChild(contentButton);
@@ -76,15 +70,13 @@ const AnnModal = (options) => {
             contentDiv.appendChild(answer);
 
             modalBody.appendChild(contentDiv);
-            contentDivs.push(contentDiv);
 
             // Add horizontal line between content divs
             if (index !== questionsAnswers.length - 1) {
                 const hr = document.createElement('hr');
                 hr.classList.add('AnnModal-horizontal-line');
-                modalBody.insertBefore(hr, contentDiv.nextSibling);
+                modalBody.appendChild(hr);
             }
-
         });
 
         // Append modal to the document body
@@ -103,6 +95,7 @@ const AnnModal = (options) => {
 
         return modal;
     };
+
 
     // Function to check if the paragraph content exceeds a certain height
     const isLongContent = (element) => {
