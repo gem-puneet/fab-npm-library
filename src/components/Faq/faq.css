@@ -48,10 +48,11 @@
 }
 
 .faq-search-img {
+    left: 34px;
     position: absolute;
-    left: 40px;
-    top: 93px;
+    top: 87px;
     width: 10px;
+
 }
 
 .faq-search-box {
