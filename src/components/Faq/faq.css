@@ -12,19 +12,19 @@
 
 .position-top-left {
     top: 0;
-    position: absolute;
+    position: fixed;
     left: 0;
 }
 
 .position-bottom-right {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     right: 0;
 }
 
 .position-bottom-left {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     left: 0;
 }
 
