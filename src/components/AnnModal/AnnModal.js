@@ -53,6 +53,24 @@ const AnnModal = (options) => {
             answer.textContent = item.answer;
             answer.classList.add('AnnModal-content-p');
 
+            // Check if the paragraph content exceeds a certain height (equivalent to two lines)
+            if (isLongContent(answer)) {
+                const readMoreLink = document.createElement('a');
+                readMoreLink.textContent = 'Read More';
+                readMoreLink.classList.add('AnnModal-read-more');
+                readMoreLink.href = '#'; // Add your link destination here
+
+                // Append "Read More" link to contentDiv
+                contentDiv.appendChild(readMoreLink);
+
+                // Add click event listener to toggle between full and truncated content
+                readMoreLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    contentDiv.classList.toggle('AnnModal-content-div-expanded');
+                    readMoreLink.textContent = contentDiv.classList.contains('AnnModal-content-div-expanded') ? 'Read Less' : 'Read More';
+                });
+            }
+
             contentDiv.appendChild(contentButton);
             contentDiv.appendChild(question);
             contentDiv.appendChild(answer);
@@ -86,6 +104,10 @@ const AnnModal = (options) => {
         return modal;
     };
 
+    // Function to check if the paragraph content exceeds a certain height
+    const isLongContent = (element) => {
+        return element.clientHeight > 2 * parseFloat(getComputedStyle(element).lineHeight);
+    };
 
     const openModal = () => {
         const modal = createModal();

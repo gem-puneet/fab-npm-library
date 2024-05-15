@@ -103,12 +103,29 @@
 }
 
 /* Content Paragraph */
-.AnnModal-content-p {
+/* .AnnModal-content-p {
     font-size: 13px;
-}
+} */
 
 .AnnModal-horizontal-line {
     border: none;
     border-top: 1px solid #ccc; /* Adjust color as needed */
     margin: 10px 0; /* Adjust spacing as needed */
+}
+
+/* Read More Link */
+.AnnModal-read-more {
+    color: blue; /* Customize link color */
+    cursor: pointer;
+}
+
+/* Expanded Content */
+.AnnModal-content-div .AnnModal-content-p {
+    overflow: hidden;
+    max-height: calc(2 * 1.2em); /* Two lines of text */
+    margin: 0; /* Reset margin */
+}
+
+.AnnModal-content-div-expanded .AnnModal-content-p {
+    max-height: none;
 }
