@@ -6,7 +6,7 @@
 }
 
  .faq-container-header {
-    background: linear-gradient(to right, #0066cc 35%, #3366cc 53%);
+    background: linear-gradient(to right, #0745B0, #1455C3, #2466D9);
     height:65px;
 }
 .faq-boat-img {
@@ -14,6 +14,24 @@
     bottom: 40px;
     right: 60px;
     width: 60px;
+}
+
+.faq-msz-img {
+    position: relative;
+    bottom: 40px;
+    right: 48px;
+    width: 60px;
+    left: 50%;
+    
+}
+
+.close-icon {
+    position: relative;
+    font-size: 30px;
+    cursor: pointer;
+    bottom: 80px;
+    z-index: 1;
+    left: 50%;
 }
 
 .faq-header-text {
@@ -26,8 +44,7 @@
     font-family: sans-serif;
 }
 .faq-header-text-help {
-    font-size: 12px;
-    color: #ccc;
+    font-size: 14px;
 }
 
 .faq-search-img {
@@ -76,12 +93,18 @@
 }
 
 .faq-question {
+    font-weight: 14px;
     font-family: sans-serif;
+    font-weight: 600;
+    color: #465465;
 }
 
 .faq-answer {
+    font-weight: 14px;
     font-family: sans-serif;
-    padding-top: 5px;
+    padding-top:10px;
+    color: #465465;
+    font-size: 10px;
 }
 
 

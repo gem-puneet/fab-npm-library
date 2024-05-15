@@ -1,4 +1,5 @@
-import "./faq.css";
+ import "./faq.css";
+
 var faqItems = [
     { question: "How do I open a bank account with FAB?", answer: "To create your account with FAB, you can visit their website and follow the instructions for account opening. You may need to provide personal information and identification documents" },
     { question: " What are the requirements for opening a bank account with FAB?", answer: "Typically, you will need to provide proof of identity such as a passport or national ID card, proof of address, and possibly other documents depending on the type of account you wish to open." },
@@ -30,8 +31,23 @@ export class FAQComponent {
         svgImage.classList.add("faq-boat-img");
         svgImage.setAttribute("src", "./assets/icon/Chatbot.svg");
 
+        const MessageIcon = document.createElement("img");
+        MessageIcon.classList.add("faq-msz-img");
+        MessageIcon.setAttribute("src", "./assets/icon/MessageIocn.svg");
+        
+        const closeIcon = document.createElement("span");
+        closeIcon.classList.add("close-icon");
+        closeIcon.textContent = "×";
+        closeIcon.addEventListener("click", function() {
+        faqOuterDiv.style.display = "none"; 
+        });
+
+        
+
         headerText.appendChild(faqTitle);
         headerText.appendChild(svgImage);
+        headerText.appendChild(MessageIcon);
+        headerText.appendChild(closeIcon);
         header.appendChild(headerText);
         this.faqOuterDiv.appendChild(header);
     }
@@ -123,6 +139,6 @@ export class FAQComponent {
 
 
 // document.addEventListener("DOMContentLoaded", function () {
-//     var faqComponent = new FAQComponent();
+//     var faqComponent = new FAQComponent('');
 //     faqComponent.createFAQComponent();
 // });
