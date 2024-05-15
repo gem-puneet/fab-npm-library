@@ -47,7 +47,7 @@
 /* New Image */
 .AnnModal-new-img {
     height: 70px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 /* Modal Title */
@@ -105,4 +105,10 @@
 /* Content Paragraph */
 .AnnModal-content-p {
     font-size: 13px;
+}
+
+.AnnModal-horizontal-line {
+    border: none;
+    border-top: 1px solid #ccc; /* Adjust color as needed */
+    margin: 10px 0; /* Adjust spacing as needed */
 }
