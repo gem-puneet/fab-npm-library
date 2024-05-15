@@ -753,28 +753,30 @@
 
                 // Check if the paragraph content exceeds a certain height (equivalent to two lines)
                 if (isLongContent(answer)) {
+                    console.log("inside isLong");
                     const readMoreLink = document.createElement('a');
                     readMoreLink.textContent = 'Read More';
                     readMoreLink.classList.add('AnnModal-read-more');
                     readMoreLink.href = '#'; // Add your link destination here
-
+                    console.log("inside isLong 2");
                     // Add click event listener to toggle between full and truncated content
                     readMoreLink.addEventListener('click', (event) => {
                         event.preventDefault();
                         contentDiv.classList.toggle('AnnModal-content-div-expanded');
                         readMoreLink.textContent = contentDiv.classList.contains('AnnModal-content-div-expanded') ? 'Read Less' : 'Read More';
                     });
-
+                    console.log("inside isLong 3");
                     // Append "Read More" link to contentDiv
                     contentDiv.appendChild(readMoreLink);
+                    console.log("inside isLong 4");
                 }
-
+                console.log("inside isLong 5");
                 contentDiv.appendChild(contentButton);
                 contentDiv.appendChild(question);
                 contentDiv.appendChild(answer);
 
                 modalBody.appendChild(contentDiv);
-
+                console.log("inside isLong 6");
                 // Add horizontal line between content divs
                 if (index !== questionsAnswers.length - 1) {
                     const hr = document.createElement('hr');
@@ -803,6 +805,9 @@
 
         // Function to check if the paragraph content exceeds a certain height
         const isLongContent = (element) => {
+            console.log("inside isLong 6");
+            console.log("x",parseFloat(getComputedStyle(element).lineHeight));
+            console.log("y",element.scrollHeight);
             return element.scrollHeight > 2 * parseFloat(getComputedStyle(element).lineHeight);
         };
 
