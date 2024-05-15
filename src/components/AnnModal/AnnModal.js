@@ -1,6 +1,6 @@
 import "./AnnModal.css";
 import newSvg from "./New.svg";
-import AnnouncementStripBG from "./AnnouncementStrip.svg";
+//import AnnouncementStripBG from "./AnnouncementStrip.svg";
 
 const AnnModal = (options) => {
     const { questionsAnswers, onClose } = options;

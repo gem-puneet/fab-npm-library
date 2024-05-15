@@ -9,8 +9,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);/* Apply blur effect */
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(1px);/* Apply blur effect */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -25,6 +25,7 @@
     max-height: 60%;
     height: 60%;
     border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Header */
@@ -72,7 +73,7 @@
 
 /* Modal Body */
 .AnnModal-modal-body {
-    padding: 0 20px;
+    padding: 25px 22px;
     overflow-y: scroll;
     max-height: calc(100% - 50px);/* Adjust max height */
     -ms-overflow-style: none;
@@ -80,9 +81,9 @@
 }
 
 /* Content Div */
-.AnnModal-content-div {
+/* .AnnModal-content-div {
     padding: 10px;
-}
+} */
 
 /* Content Button */
 .AnnModal-content-button {
