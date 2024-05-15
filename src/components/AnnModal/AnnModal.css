@@ -121,9 +121,11 @@
     margin-top: 10px; /* Adjust margin as needed */
 }
 
+/* Content Paragraph */
 .AnnModal-content-p {
     font-size: 13px;
     line-height: 20px; /* Adjust the line height value as per your design */
+    position: relative;
 }
 
 /* Truncate paragraph content to show only two lines initially */

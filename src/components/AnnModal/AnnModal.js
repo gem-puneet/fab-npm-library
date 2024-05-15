@@ -48,35 +48,68 @@ const AnnModal = (options) => {
             answer.classList.add('AnnModal-content-p');
 
             // Calculate line height for the paragraph
-            const lineHeight = calculateLineHeight(answer);
-
-            console.log("p created")
-            // Check if the paragraph content exceeds a certain height (equivalent to two lines)
-            // Check if the paragraph content exceeds a certain height
-            if (isLongContent(answer, lineHeight)) {
-                console.log("inside isLong 1")
-                const readMoreLink = document.createElement('a');
-                readMoreLink.textContent = 'Read More';
-                readMoreLink.classList.add('AnnModal-read-more');
-                readMoreLink.href = '#'; // Add your link destination here
-                console.log("inside isLong 2")
-
-                // Add click event listener to toggle between full and truncated content
-                readMoreLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    contentDiv.classList.toggle('AnnModal-content-div-expanded');
-                    readMoreLink.textContent = contentDiv.classList.contains('AnnModal-content-div-expanded') ? 'Read Less' : 'Read More';
-                });
-
-                // Append "Read More" link to contentDiv
-                contentDiv.appendChild(readMoreLink);
-                console.log("inside isLong 3")
-            }
+            //const lineHeight = calculateLineHeight(answer);
 
             console.log("inside isLong 5")
             contentDiv.appendChild(contentButton);
             contentDiv.appendChild(question);
             contentDiv.appendChild(answer);
+
+            // Set a fixed line height in CSS and calculate the height of two lines
+            const lineHeight = 20; // Adjust this value based on your design
+            const twoLinesHeight = lineHeight * 2;
+
+            // Truncate answer to show only two lines initially
+            answer.style.maxHeight = `${twoLinesHeight}px`;
+            answer.style.overflow = 'hidden';
+
+            console.log("p created")
+            // Check if the paragraph content exceeds a certain height (equivalent to two lines)
+            // Check if the paragraph content exceeds a certain height
+            console.log("answer.scrollHeight", answer.scrollHeight)
+            // setTimeout(() => {
+            //     console.log("answer.scrollHeight 2", answer.scrollHeight)
+            //     if (answer.scrollHeight > 40) {
+            //         console.log("inside isLong 1")
+
+            //         const readMoreLink = document.createElement('a');
+            //         readMoreLink.textContent = 'Read More';
+            //         readMoreLink.classList.add('AnnModal-read-more');
+            //         readMoreLink.href = '#';
+            //         console.log("inside isLong 000")
+            //         readMoreLink.addEventListener('click', (event) => {
+            //             event.preventDefault();
+            //             contentDiv.classList.toggle('AnnModal-content-div-expanded');
+            //             readMoreLink.textContent = contentDiv.classList.contains('AnnModal-content-div-expanded') ? 'Read Less' : 'Read More';
+            //         });
+            //         contentDiv.appendChild(readMoreLink);
+            //         console.log("inside isLong 111")
+            //     }
+            // }, 0);
+
+            setTimeout(() => {
+                if (answer.scrollHeight > twoLinesHeight) {
+                    console.log("678")
+                    const readMoreLink = document.createElement('a');
+                    readMoreLink.textContent = 'Read More';
+                    readMoreLink.classList.add('AnnModal-read-more');
+                    console.log("789")
+                    readMoreLink.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        if (contentDiv.classList.contains('AnnModal-content-div-expanded')) {
+                            answer.style.maxHeight = `${twoLinesHeight}px`; // Truncate to two lines when collapsing
+                            readMoreLink.textContent = 'Read More';
+                        } else {
+                            answer.style.maxHeight = null; // Show full content when expanding
+                            readMoreLink.textContent = 'Read Less';
+                        }
+                        console.log("1678")
+                        contentDiv.classList.toggle('AnnModal-content-div-expanded');
+                    });
+        
+                    contentDiv.appendChild(readMoreLink);
+                }
+            }, 0);
 
             modalBody.appendChild(contentDiv);
             console.log("inside isLong 6")
@@ -107,28 +140,35 @@ const AnnModal = (options) => {
 
 
     // Function to calculate line height for a paragraph
-    const calculateLineHeight = (element) => {
-        console.log("Calculating line height...");
-        console.log("Element:", element);
-        console.log("Computed style:", window.getComputedStyle(element));
-        if (!(element instanceof Element)) {
-            console.error("Invalid element:", element);
-            return 0; // Return a default line height
-        }
-        console.log("Line-height:", window.getComputedStyle(element).getPropertyValue("height"));
+    // const calculateLineHeight = (element) => {
+    //     console.log("Calculating line height...");
+    //     console.log("Element:", element);
+    //     console.log("Computed style:", window.getComputedStyle(element));
+    //     if (!(element instanceof Element)) {
+    //         console.error("Invalid element:", element);
+    //         return 0; // Return a default line height
+    //     }
+    //     console.log("Line-height:", window.getComputedStyle(element).getPropertyValue("height"));
 
-        const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
-        console.log("Line height:", lineHeight);
-        return lineHeight;
-    };
+    //     const lineHeight = parseFloat(window.getComputedStyle(element).lineHeight);
+    //     console.log("Line height:", lineHeight);
+    //     return lineHeight;
+    // };
 
-    // Function to check if the paragraph content exceeds a certain height
-    const isLongContent = (element, lineHeight) => {
-        console.log("abc")
-        console.log("x", element.scrollHeight)
-        console.log("y", 2 * lineHeight)
-        return element.scrollHeight > 2 * lineHeight;
-    };
+    // // Function to check if the paragraph content exceeds a certain height
+    // const isLongContent = (element, lineHeight) => {
+    //     console.log("abc")
+    //     console.log("x", element.scrollHeight)
+    //     console.log("y", 2 * lineHeight)
+    //     return element.scrollHeight > 2 * lineHeight;
+    // };
+
+    // const isLongContent = (element) => {
+    //     const numberOfLines = 2; // Number of lines to display initially
+    //     const lineHeight = calculateLineHeight();
+    //     return element.scrollHeight > numberOfLines * lineHeight;
+    // };
+
 
     const openModal = () => {
         const modal = createModal();
