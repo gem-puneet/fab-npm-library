@@ -813,12 +813,15 @@
         // Function to calculate line height for a paragraph
         const calculateLineHeight = (element) => {
             console.log("xyz");
+            console.log("xy",window.getComputedStyle(element).lineHeight);
             return parseFloat(window.getComputedStyle(element).lineHeight);
         };
 
         // Function to check if the paragraph content exceeds a certain height
         const isLongContent = (element, lineHeight) => {
             console.log("abc");
+            console.log("x",element.scrollHeight);
+            console.log("y",2 * lineHeight);
             return element.scrollHeight > 2 * lineHeight;
         };
 
