@@ -125,7 +125,6 @@ class AnnModalInstance {
 
     closeModal(modal) {
         if (modal && modal.parentNode) {
-            console.log("closed");
             modal.parentNode.removeChild(modal);
         }
     }

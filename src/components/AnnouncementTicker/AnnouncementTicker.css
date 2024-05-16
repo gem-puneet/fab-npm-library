@@ -1,0 +1,235 @@
+.AnnouncementTicker-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* .AnnouncementTicker-title{
+    position: absolute;
+    background: #EB3228;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: white;
+    font-weight: bold;
+    z-index: 200;
+} */
+
+.AnnouncementTicker-title {
+    position: absolute;
+    background: #EB3228;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding-left: 50px;
+    /* Adjust as needed */
+    padding-right: 20px;
+    /* Ensure the text appears on top */
+    z-index: 200;
+    overflow: hidden;
+}
+
+.AnnouncementTicker-title-text {
+    z-index: 6;
+}
+
+.loudspeaker-svg {
+    position: absolute;
+    width: 20px;
+    /* Adjust width and height as needed */
+    height: 20px;
+    left: 17px;
+    /* Adjust position as needed */
+    top: 22%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    /* Ensure the SVG is behind the dots */
+}
+
+.AnnouncementTicker-dot-outer {
+    position: absolute;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #A6231C;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Ensure the outermost dot is on top */
+    animation: increaseOuterDotSize 4s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.AnnouncementTicker-dot-middle {
+    position: absolute;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #8C1E18;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    /* Ensure the middle dot is between the outermost and inner dots */
+    animation: increaseMiddleDotSize 4s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.AnnouncementTicker-dot-inner {
+    position: absolute;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #731814;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    /* Ensure the innermost dot is at the bottom */
+    animation: increaseDotSize 4s linear infinite;
+    animation-delay: 0s;
+    animation: increaseInnerDotSize 4s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.AnnouncementTicker-ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: moveFromRight 20s linear infinite;
+}
+
+.AnnouncementTicker-li {
+    padding: 10px 20px;
+    color: blue;
+    opacity: 0.8;
+    position: relative;
+}
+
+.AnnouncementTicker-li::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: blue;
+    opacity: 0.8;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Center vertically */
+    right: -2px;
+}
+
+.AnnouncementTicker-li:last-child::after {
+    display: none;
+}
+
+.AnnouncementTicker-li-link {
+    color: blue;
+    /* Set link color */
+    text-decoration: underline;
+    /* Add underline */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    margin-left: 5px;
+    /* Adjust margin as needed */
+    position: relative;
+    padding: 0 20px;
+}
+
+.AnnouncementTicker-li-link::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: blue;
+    opacity: 0.8;
+    top: 0;
+    left: 4px;
+    /* Adjust the position to align with the text */
+}
+
+/* .rotateLoudspeakerSvg {
+    transform: rotate(90deg);
+} */
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.rotateLoudspeakerSvg {
+    animation: rotateAnimation 4s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+@keyframes increaseInnerDotSize {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes increaseMiddleDotSize {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        width: 35px;
+        height: 35px;
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes increaseOuterDotSize {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
