@@ -1,11 +1,14 @@
 import "./AnnouncementTicker.css";
+import loudspeakerSvg from "./loudspeaker.svg";
 class AnnouncementTickerInstance {
     constructor() {
         this.container = null;
+        this.loudspeakerSvg = loudspeakerSvg;
     }
 
     createTicker() {
         // Create container
+        
         const tickerContainer = document.createElement("div");
         tickerContainer.classList.add("AnnouncementTicker-container");
 
@@ -14,7 +17,7 @@ class AnnouncementTickerInstance {
         titleContainer.classList.add("AnnouncementTicker-title");
 
         const loudspeakerSvg = document.createElement("img");
-        loudspeakerSvg.src = "./loudspeaker.svg";
+        loudspeakerImg.src = this.loudspeakerSvg;
         loudspeakerSvg.alt = "loudspeaker-Svg";
         loudspeakerSvg.classList.add("loudspeaker-svg");
 
