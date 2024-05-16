@@ -708,8 +708,16 @@
 
     //import AnnouncementStripBG from "./AnnouncementStrip.svg";
 
-    const AnnModal = (options) => {
-        const { questionsAnswers, onClose } = options;
+    const AnnModal = () => {
+        const questionsAnswers = [
+            { button: "my button", question: "Data types in JavaScript?", answer: "Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types." },
+            { button: "my button", question: "Object-oriented programming (OOP)?", answer: "OOP) is a programming paradigm that allows us to model real-world objects in our code. OOP in JavaScript is based on creating objects that have properties (features) and methods (functions that can perform actions)." },
+            { button: "my button", question: "Scope?", answer: "Scope determines the accessibility of variables, objects, and functions from different parts of the code." },
+            { button: "my button", question: "Functions in JavaScript?", answer: "Functions are blocks of reusable code that perform a specific task. In JavaScript, functions are first-class objects, which means they can be passed around like any other value." },
+            { button: "my button", question: "Arrays in JavaScript?", answer: "Arrays are special types of objects that store multiple values in a single variable. They are used to store collections of data, such as lists of items or sets of values." },
+            { button: "my button", question: "Conditional statements in JavaScript?", answer: "Conditional statements are used to execute different code based on different conditions. The most common conditional statements in JavaScript are if, else if, and else." },
+            { button: "my button", question: "Loops in JavaScript?", answer: "Loops are used to execute the same block of code repeatedly until a specified condition is met. JavaScript supports several types of loops, including for, while, and do-while loops." }
+        ];
 
         const createModal = () => {
             // Create modal elements
@@ -823,8 +831,8 @@
         const closeModal = () => {
             const modal = document.getElementById("modal");
             if (modal) {
+                console.log("closed");
                 modal.style.display = "none";
-                onClose(); // Call onClose callback provided by the user
             }
         };
 
