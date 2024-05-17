@@ -17,7 +17,7 @@ class AnnouncementTickerInstance {
         titleContainer.classList.add("AnnouncementTicker-title");
 
         const loudspeakerSvg = document.createElement("img");
-        loudspeakerImg.src = this.loudspeakerSvg;
+        loudspeakerSvg.src = this.loudspeakerSvg;
         loudspeakerSvg.alt = "loudspeaker-Svg";
         loudspeakerSvg.classList.add("loudspeaker-svg");
 
