@@ -686,8 +686,8 @@
     				id: "step-1",
     				title: "Explore Tomato",
     				content: "Click on the menu items to exlore our website .",
-    				targetSelector: "#navbar-middle-menu",
-    				position: "bottom-center"
+    				targetSelector: "#footer",
+    				position: "top-center"
     			},
     			{
     				id: "step-2",
@@ -892,25 +892,14 @@
             });
         });
 
-        console.log("configSteps",configSteps);
-        console.log("1st Arr",driverSteps);
-
         {
-            console.log("2nd Arr",driverSteps);
-            driverSteps.forEach((step) => {
-                step.popover.popoverClass = 'driverjs-theme';
-            });
-
-            const yellowDriverObj = ke({
+            const defaultDriverObj = ke({
                 showProgress: true,
                 animate: false,
-                nextBtnText: '—›',
-                prevBtnText: '‹—',
-                doneBtnText: '✕',
                 steps: driverSteps
             });
 
-            return yellowDriverObj.drive();
+            return defaultDriverObj.drive();
 
         }
     };

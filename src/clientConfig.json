@@ -13,8 +13,8 @@
                     "id": "step-1",
                     "title": "Explore Tomato",
                     "content": "Click on the menu items to exlore our website .",
-                    "targetSelector": "#navbar-middle-menu",
-                    "position": "bottom-center"
+                    "targetSelector": "#footer",
+                    "position": "top-center"
                 },
                 {
                     "id": "step-2",
