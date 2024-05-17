@@ -4,7 +4,8 @@
     left: 0;
     right: 0;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3), 0 -4px 8px -4px rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
 }
 
 /* .AnnouncementTicker-title{
@@ -231,5 +232,21 @@
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 768px) {
+    .AnnouncementTicker-container {
+        font-size: 14px;
+    }
+
+    .AnnouncementTicker-title {
+        padding-left: 30px;
+        padding-right: 8px;
+    }
+
+    .loudspeaker-svg{
+        height: 15px;
+        width: 15px;
     }
 }
