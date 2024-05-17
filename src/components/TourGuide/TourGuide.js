@@ -3,8 +3,9 @@ import 'driver.js/dist/driver.css';
 import './TourGuide.css';
 import configSteps from '../../clientConfig.json';
 
-const TourGuide = (theme, steps) => {
+const TourGuide = () => {
     const step = configSteps.page1.contextualGuide.steps;
+    const theme = configSteps.page1.contextualGuide.theme.yellowColor;
     let driverSteps = [];
 
     step.forEach(step => {
@@ -23,9 +24,9 @@ const TourGuide = (theme, steps) => {
     console.log("configSteps",configSteps);
     console.log("1st Arr",driverSteps);
 
-    if (theme === "yellow") {
+    if (theme === "#fde047") {
         console.log("2nd Arr",driverSteps);
-        steps.forEach((step) => {
+        driverSteps.forEach((step) => {
             step.popover.popoverClass = 'driverjs-theme';
         });
 
@@ -35,7 +36,7 @@ const TourGuide = (theme, steps) => {
             nextBtnText: '—›',
             prevBtnText: '‹—',
             doneBtnText: '✕',
-            steps: steps
+            steps: driverSteps
         });
 
         return yellowDriverObj.drive();
@@ -45,7 +46,7 @@ const TourGuide = (theme, steps) => {
         const defaultDriverObj = driver({
             showProgress: true,
             animate: false,
-            steps: steps
+            steps: driverSteps
         });
 
         return defaultDriverObj.drive();

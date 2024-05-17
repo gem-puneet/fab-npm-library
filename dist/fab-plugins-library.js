@@ -677,7 +677,9 @@
     		enabled: true,
     		theme: {
     			primaryColor: "#007bff",
-    			secondaryColor: "#6c757d"
+    			secondaryColor: "#6c757d",
+    			yellowColor: "#fde047",
+    			"default": ""
     		},
     		steps: [
     			{
@@ -873,7 +875,7 @@
     	page2: page2
     };
 
-    const TourGuide = (theme, steps) => {
+    const TourGuide = () => {
         const step = configSteps.page1.contextualGuide.steps;
         let driverSteps = [];
 
@@ -893,9 +895,9 @@
         console.log("configSteps",configSteps);
         console.log("1st Arr",driverSteps);
 
-        if (theme === "yellow") {
+        {
             console.log("2nd Arr",driverSteps);
-            steps.forEach((step) => {
+            driverSteps.forEach((step) => {
                 step.popover.popoverClass = 'driverjs-theme';
             });
 
@@ -905,20 +907,10 @@
                 nextBtnText: '—›',
                 prevBtnText: '‹—',
                 doneBtnText: '✕',
-                steps: steps
+                steps: driverSteps
             });
 
             return yellowDriverObj.drive();
-
-        } else {
-            console.log("3rd Arr",driverSteps);
-            const defaultDriverObj = ke({
-                showProgress: true,
-                animate: false,
-                steps: steps
-            });
-
-            return defaultDriverObj.drive();
 
         }
     };

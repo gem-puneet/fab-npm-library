@@ -4,7 +4,9 @@
             "enabled": true,
             "theme": {
                 "primaryColor": "#007bff",
-                "secondaryColor": "#6c757d"
+                "secondaryColor": "#6c757d",
+                "yellowColor": "#fde047",
+                "default":""
             },
             "steps": [
                 {
