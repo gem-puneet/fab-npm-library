@@ -1011,30 +1011,51 @@
         }
 
         createTicker() {
-            // Create container
-            
-            const tickerContainer = document.createElement("div");
-            tickerContainer.classList.add("AnnouncementTicker-container");
+            // Create the container
+            const container = document.createElement("div");
+            container.classList.add("AnnouncementTicker-container");
 
-            // Create title section
-            const titleContainer = document.createElement("div");
-            titleContainer.classList.add("AnnouncementTicker-title");
+            // Create the title section
+            const titleDiv = document.createElement("div");
+            titleDiv.classList.add("AnnouncementTicker-title");
 
-            const loudspeakerSvg = document.createElement("img");
-            loudspeakerSvg.src = this.loudspeakerSvg;
-            loudspeakerSvg.alt = "loudspeaker-Svg";
-            loudspeakerSvg.classList.add("loudspeaker-svg");
+            // Create the loudspeaker image
+            const loudspeakerImg = document.createElement("img");
+            loudspeakerImg.src = this.loudspeakerSvg;
+            loudspeakerImg.alt = "loudspeaker-Svg";
+            loudspeakerImg.classList.add("loudspeaker-svg");
+            titleDiv.appendChild(loudspeakerImg);
 
+            function rotateImage() {
+                loudspeakerImg.classList.toggle('rotateLoudspeakerSvg');
+            }
+            setInterval(rotateImage, 2000);
+
+            // Create the dot elements
+            const dotOuter = document.createElement("span");
+            dotOuter.classList.add("AnnouncementTicker-dot-outer");
+            titleDiv.appendChild(dotOuter);
+
+            const dotMiddle = document.createElement("span");
+            dotMiddle.classList.add("AnnouncementTicker-dot-middle");
+            titleDiv.appendChild(dotMiddle);
+
+            const dotInner = document.createElement("span");
+            dotInner.classList.add("AnnouncementTicker-dot-inner");
+            titleDiv.appendChild(dotInner);
+
+            // Create the title text
             const titleText = document.createElement("span");
             titleText.textContent = "Announcement";
             titleText.classList.add("AnnouncementTicker-title-text");
+            titleDiv.appendChild(titleText);
 
-            titleContainer.appendChild(loudspeakerSvg);
-            titleContainer.appendChild(titleText);
+            // Append titleDiv to container
+            container.appendChild(titleDiv);
 
-            // Create list
-            const announcementList = document.createElement("ul");
-            announcementList.classList.add("AnnouncementTicker-ul");
+            // Create the unordered list
+            const ul = document.createElement("ul");
+            ul.classList.add("AnnouncementTicker-ul");
 
             // Create list items
             const items = [
@@ -1044,29 +1065,30 @@
             ];
 
             items.forEach((itemText, index) => {
-                const listItem = document.createElement("li");
-                listItem.classList.add("AnnouncementTicker-li");
-                listItem.textContent = itemText;
-                
-                // Add link to the second item
+                const li = document.createElement("li");
+                li.textContent = itemText;
+                li.classList.add("AnnouncementTicker-li");
+            
+                // Check if it's the second item
                 if (index === 1) {
                     const linkSpan = document.createElement("span");
                     linkSpan.textContent = "click here";
                     linkSpan.classList.add("AnnouncementTicker-li-link");
-                    listItem.appendChild(linkSpan);
+                    li.appendChild(linkSpan);
                 }
-
-                announcementList.appendChild(listItem);
+            
+                ul.appendChild(li);
             });
+            
 
-            // Append elements to container
-            tickerContainer.appendChild(titleContainer);
-            tickerContainer.appendChild(announcementList);
+            // Append ul to container
+            container.appendChild(ul);
 
-            // Append container to body
-            document.body.appendChild(tickerContainer);
+            // Append container to the document body
+            document.body.appendChild(container);
 
-            this.container = tickerContainer;
+            // Set the container property
+            this.container = container;
         }
     }
 
