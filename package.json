@@ -1,6 +1,6 @@
 {
   "name": "fab-plugins-library",
-  "version": "1.6.5",
+  "version": "1.6.7",
   "description": "A custom npm package containing reusable components and utilities.",
   "main": "dist/fab-plugins-library.js",
   "type": "module",
@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-json": "^6.1.0",
     "@svgr/rollup": "^8.1.0",
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.1",

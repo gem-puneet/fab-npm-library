@@ -672,10 +672,229 @@
       };
     }
 
+    var page1 = {
+    	contextualGuide: {
+    		enabled: true,
+    		theme: {
+    			primaryColor: "#007bff",
+    			secondaryColor: "#6c757d"
+    		},
+    		steps: [
+    			{
+    				id: "step-1",
+    				title: "Explore Tomato",
+    				content: "Click on the menu items to exlore our website .",
+    				targetSelector: "#navbar-middle-menu",
+    				position: "bottom-center"
+    			},
+    			{
+    				id: "step-2",
+    				title: "Food Menu",
+    				content: "Click here to check our food categories .",
+    				targetSelector: "#view-all-menu",
+    				position: "right-center"
+    			},
+    			{
+    				id: "step-3",
+    				title: "Food Options",
+    				content: "Click on your favourite food to check all the food items related to that category .",
+    				targetSelector: "#explore-menu-list",
+    				position: "top-center"
+    			},
+    			{
+    				id: "step-4",
+    				title: "Add Your favourite food",
+    				content: "Click here to add your favourite food on your cart list .",
+    				targetSelector: "#add-food-item",
+    				position: "bottom-start"
+    			},
+    			{
+    				id: "step-5",
+    				title: "Cart Items",
+    				content: "Click here to check the food items you added in your cart list .",
+    				targetSelector: "#check-cart-items",
+    				position: "bottom-end"
+    			},
+    			{
+    				id: "step-6",
+    				title: "Sign in",
+    				content: "But to order any food you have to sign in .",
+    				targetSelector: "#sig-in",
+    				position: "bottom-end"
+    			}
+    		],
+    		onboardingCompletedCookie: "onboarding_completed",
+    		showOnboardingOnReload: false
+    	},
+    	announcement: {
+    		enabled: true,
+    		title: "Important Announcement!",
+    		message: "We're excited to announce the launch of our new product line. Check it out now!",
+    		link: "https://www.example.com/new-products",
+    		startDate: "2024-05-15",
+    		endDate: "2024-06-15",
+    		priority: 1,
+    		dismissible: true
+    	},
+    	faq: {
+    		enabled: true,
+    		questions: [
+    			{
+    				id: 1,
+    				question: "What is the capital of France?",
+    				answer: "The capital of France is Paris."
+    			},
+    			{
+    				id: 2,
+    				question: "Who wrote 'Romeo and Juliet'?",
+    				answer: "William Shakespeare wrote 'Romeo and Juliet'."
+    			},
+    			{
+    				id: 3,
+    				question: "What is the tallest mountain in the world?",
+    				answer: "The tallest mountain in the world is Mount Everest."
+    			},
+    			{
+    				id: 4,
+    				question: "Who painted the Mona Lisa?",
+    				answer: "The Mona Lisa was painted by Leonardo da Vinci."
+    			}
+    		]
+    	}
+    };
+    var page2 = {
+    	announcement: {
+    		enabled: true,
+    		title: "Important Announcement!",
+    		message: "We're excited to announce the launch of our new product line. Check it out now!",
+    		link: "https://www.example.com/new-products",
+    		startDate: "2024-05-15",
+    		endDate: "2024-06-15",
+    		dismissible: true
+    	},
+    	worlflow: {
+    		name: "Account Opening",
+    		description: "Workflow steps for opening a new account in a bank.",
+    		enabled: true,
+    		steps: [
+    			{
+    				id: 1,
+    				name: "Initial Contact",
+    				description: "Customer expresses interest in opening a new account.",
+    				enable: true,
+    				status: "Pending",
+    				substeps: [
+    					{
+    						id: 1.1,
+    						name: "Appointment Scheduling",
+    						description: "Schedule an appointment for the customer to come into the branch (if necessary).",
+    						enable: true,
+    						status: "Pending"
+    					}
+    				]
+    			},
+    			{
+    				id: 2,
+    				name: "Documentation Collection",
+    				description: "Customer provides required documents for account opening.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 3,
+    				name: "Account Selection",
+    				description: "Bank representative assists the customer in selecting the type of account.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 4,
+    				name: "Application Submission",
+    				description: "Customer fills out the account opening application form.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 5,
+    				name: "KYC Process",
+    				description: "Collect additional information from the customer as required by regulatory guidelines.",
+    				enable: true,
+    				status: "Pending",
+    				substeps: [
+    					{
+    						id: 5.1,
+    						name: "Identity Verification",
+    						description: "Verify the identity of the customer through ID documents and biometric data (if applicable).",
+    						enable: true,
+    						status: "Pending"
+    					},
+    					{
+    						id: 5.2,
+    						name: "Address Verification",
+    						description: "Verify the customer's residential address using the provided address proof.",
+    						enable: true,
+    						status: "Pending"
+    					}
+    				]
+    			},
+    			{
+    				id: 6,
+    				name: "Risk Assessment",
+    				description: "Assess the risk associated with opening an account for the customer.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 7,
+    				name: "Account Approval",
+    				description: "Once all necessary checks are completed, approve the account opening request.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 8,
+    				name: "Funds Deposit",
+    				description: "Customer deposits the initial funds into the newly opened account.",
+    				enable: true,
+    				status: "Pending"
+    			},
+    			{
+    				id: 9,
+    				name: "Welcome Kit Issuance",
+    				description: "Provide the customer with a welcome kit containing account-related documents.",
+    				enable: true,
+    				status: "Pending"
+    			}
+    		]
+    	}
+    };
+    var configSteps = {
+    	page1: page1,
+    	page2: page2
+    };
+
     const TourGuide = (theme, steps) => {
+        const step = configSteps.page1.contextualGuide.steps;
+        let driverSteps = [];
+
+        step.forEach(step => {
+            const [side, align] = step.position.split('-');
+            driverSteps.push({
+                element: step.targetSelector,
+                popover: {
+                    title: step.title,
+                    description: step.content,
+                    side: side,
+                    align: align
+                }
+            });
+        });
+
+        console.log("configSteps",configSteps);
+        console.log("1st Arr",driverSteps);
 
         if (theme === "yellow") {
-
+            console.log("2nd Arr",driverSteps);
             steps.forEach((step) => {
                 step.popover.popoverClass = 'driverjs-theme';
             });
@@ -692,7 +911,7 @@
             return yellowDriverObj.drive();
 
         } else {
-
+            console.log("3rd Arr",driverSteps);
             const defaultDriverObj = ke({
                 showProgress: true,
                 animate: false,

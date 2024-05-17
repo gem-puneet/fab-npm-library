@@ -7,6 +7,7 @@ import html from 'rollup-plugin-html';
 import image from '@rollup/plugin-image'; // For handling images
 import svgr from '@svgr/rollup'; // For handling SVG icons
 import url from 'rollup-plugin-url'; // For handling SVG images
+import json from '@rollup/plugin-json'; // For handling JSON files
 
 export default {
   input: 'src/index.js',
@@ -44,6 +45,7 @@ export default {
       include: ['**/*.svg'], // Include SVG files
       emitFiles: true, // Emit files
     }),
+    json() // For handling JSON files
   ],
   external: ['react'], // Specify external dependencies
 };
