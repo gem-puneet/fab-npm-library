@@ -672,7 +672,7 @@
       };
     }
 
-    var page1 = {
+    var home = {
     	contextualGuide: {
     		enabled: true,
     		theme: {
@@ -686,7 +686,7 @@
     				id: "step-1",
     				title: "Explore Tomato",
     				content: "Click on the menu items to exlore our website .",
-    				targetSelector: "#footer",
+    				targetSelector: "#navbar-middle-menu",
     				position: "top-center"
     			},
     			{
@@ -728,155 +728,110 @@
     		onboardingCompletedCookie: "onboarding_completed",
     		showOnboardingOnReload: false
     	},
-    	announcement: {
+    	announcementTicker: {
     		enabled: true,
-    		title: "Important Announcement!",
-    		message: "We're excited to announce the launch of our new product line. Check it out now!",
-    		link: "https://www.example.com/new-products",
-    		startDate: "2024-05-15",
-    		endDate: "2024-06-15",
-    		priority: 1,
-    		dismissible: true
-    	},
-    	faq: {
-    		enabled: true,
-    		questions: [
-    			{
-    				id: 1,
-    				question: "What is the capital of France?",
-    				answer: "The capital of France is Paris."
-    			},
-    			{
-    				id: 2,
-    				question: "Who wrote 'Romeo and Juliet'?",
-    				answer: "William Shakespeare wrote 'Romeo and Juliet'."
-    			},
-    			{
-    				id: 3,
-    				question: "What is the tallest mountain in the world?",
-    				answer: "The tallest mountain in the world is Mount Everest."
-    			},
-    			{
-    				id: 4,
-    				question: "Who painted the Mona Lisa?",
-    				answer: "The Mona Lisa was painted by Leonardo da Vinci."
-    			}
+    		items: [
+    			"This script calculates the total height needed based on the provided dimensions",
+    			"According to your actual design",
+    			"63a054b0eca6c7459d2f1ab267d98656e99311d0"
     		]
     	}
     };
-    var page2 = {
-    	announcement: {
+    var cart = {
+    	contextualGuide: {
     		enabled: true,
-    		title: "Important Announcement!",
-    		message: "We're excited to announce the launch of our new product line. Check it out now!",
-    		link: "https://www.example.com/new-products",
-    		startDate: "2024-05-15",
-    		endDate: "2024-06-15",
-    		dismissible: true
-    	},
-    	worlflow: {
-    		name: "Account Opening",
-    		description: "Workflow steps for opening a new account in a bank.",
-    		enabled: true,
+    		theme: {
+    			primaryColor: "#007bff",
+    			secondaryColor: "#6c757d",
+    			yellowColor: "#fde047",
+    			"default": ""
+    		},
     		steps: [
     			{
-    				id: 1,
-    				name: "Initial Contact",
-    				description: "Customer expresses interest in opening a new account.",
-    				enable: true,
-    				status: "Pending",
-    				substeps: [
-    					{
-    						id: 1.1,
-    						name: "Appointment Scheduling",
-    						description: "Schedule an appointment for the customer to come into the branch (if necessary).",
-    						enable: true,
-    						status: "Pending"
-    					}
-    				]
+    				id: "step-1",
+    				title: "Promocode",
+    				content: "If you have promocode, you can use .",
+    				targetSelector: "#cart-promo-code-input",
+    				position: "bottom-center"
     			},
     			{
-    				id: 2,
-    				name: "Documentation Collection",
-    				description: "Customer provides required documents for account opening.",
-    				enable: true,
-    				status: "Pending"
+    				id: "step-2",
+    				title: "Proceed",
+    				content: "Click here to proceed for payment .",
+    				targetSelector: "#proceed_to_checkout",
+    				position: "right-center"
+    			}
+    		],
+    		onboardingCompletedCookie: "onboarding_completed",
+    		showOnboardingOnReload: false
+    	},
+    	announcementModal: {
+    		enabled: true,
+    		title: "Important Announcement!",
+    		questionsAnswers: [
+    			{
+    				button: "my button",
+    				question: "Data types in JavaScript?",
+    				answer: "Data types in JavaScript define the data type that a variable can store. JavaScript includes primitive and non-primitive data types."
     			},
     			{
-    				id: 3,
-    				name: "Account Selection",
-    				description: "Bank representative assists the customer in selecting the type of account.",
-    				enable: true,
-    				status: "Pending"
+    				button: "my button",
+    				question: "Object-oriented programming (OOP)?",
+    				answer: "OOP) is a programming paradigm that allows us to model real-world objects in our code. OOP in JavaScript is based on creating objects that have properties (features) and methods (functions that can perform actions)."
     			},
     			{
-    				id: 4,
-    				name: "Application Submission",
-    				description: "Customer fills out the account opening application form.",
-    				enable: true,
-    				status: "Pending"
+    				button: "my button",
+    				question: "Scope?",
+    				answer: "Scope determines the accessibility of variables, objects, and functions from different parts of the code."
     			},
     			{
-    				id: 5,
-    				name: "KYC Process",
-    				description: "Collect additional information from the customer as required by regulatory guidelines.",
-    				enable: true,
-    				status: "Pending",
-    				substeps: [
-    					{
-    						id: 5.1,
-    						name: "Identity Verification",
-    						description: "Verify the identity of the customer through ID documents and biometric data (if applicable).",
-    						enable: true,
-    						status: "Pending"
-    					},
-    					{
-    						id: 5.2,
-    						name: "Address Verification",
-    						description: "Verify the customer's residential address using the provided address proof.",
-    						enable: true,
-    						status: "Pending"
-    					}
-    				]
+    				button: "my button",
+    				question: "Functions in JavaScript?",
+    				answer: "Functions are blocks of reusable code that perform a specific task. In JavaScript, functions are first-class objects, which means they can be passed around like any other value."
     			},
     			{
-    				id: 6,
-    				name: "Risk Assessment",
-    				description: "Assess the risk associated with opening an account for the customer.",
-    				enable: true,
-    				status: "Pending"
+    				button: "my button",
+    				question: "Arrays in JavaScript?",
+    				answer: "Arrays are special types of objects that store multiple values in a single variable. They are used to store collections of data, such as lists of items or sets of values."
     			},
     			{
-    				id: 7,
-    				name: "Account Approval",
-    				description: "Once all necessary checks are completed, approve the account opening request.",
-    				enable: true,
-    				status: "Pending"
+    				button: "my button",
+    				question: "Conditional statements in JavaScript?",
+    				answer: "Conditional statements are used to execute different code based on different conditions. The most common conditional statements in JavaScript are if, else if, and else."
     			},
     			{
-    				id: 8,
-    				name: "Funds Deposit",
-    				description: "Customer deposits the initial funds into the newly opened account.",
-    				enable: true,
-    				status: "Pending"
-    			},
-    			{
-    				id: 9,
-    				name: "Welcome Kit Issuance",
-    				description: "Provide the customer with a welcome kit containing account-related documents.",
-    				enable: true,
-    				status: "Pending"
+    				button: "my button",
+    				question: "Loops in JavaScript?",
+    				answer: "Loops are used to execute the same block of code repeatedly until a specified condition is met. JavaScript supports several types of loops, including for, while, and do-while loops."
     			}
     		]
     	}
     };
     var configSteps = {
-    	page1: page1,
-    	page2: page2
+    	home: home,
+    	cart: cart
     };
 
-    const TourGuide = () => {
-        const step = configSteps.page1.contextualGuide.steps;
+    const TourGuide = (page) => {
+        let step;
+        let theme;
+        let enabled = false;
+        if (page == "home") {
+            {
+                enabled = true;
+            }
+            step = configSteps.home.contextualGuide.steps;
+            theme = configSteps.home.contextualGuide.theme.default;
+        } else if (page == "cart") {
+            {
+                enabled = true;
+            }
+            step = configSteps.cart.contextualGuide.steps;
+            theme = configSteps.cart.contextualGuide.theme.yellowColor;
+        } else {
+            console.log("provided page is not available in configuration json");
+        }
+
         let driverSteps = [];
 
         step.forEach(step => {
@@ -892,15 +847,33 @@
             });
         });
 
-        {
-            const defaultDriverObj = ke({
-                showProgress: true,
-                animate: false,
-                steps: driverSteps
-            });
+        if (enabled) {
+            if (theme === "#fde047") {
+                driverSteps.forEach((step) => {
+                    step.popover.popoverClass = 'driverjs-theme';
+                });
 
-            return defaultDriverObj.drive();
+                const yellowDriverObj = ke({
+                    showProgress: true,
+                    animate: false,
+                    nextBtnText: '—›',
+                    prevBtnText: '‹—',
+                    doneBtnText: '✕',
+                    steps: driverSteps
+                });
 
+                return yellowDriverObj.drive();
+
+            } else {
+                const defaultDriverObj = ke({
+                    showProgress: true,
+                    animate: false,
+                    steps: driverSteps
+                });
+
+                return defaultDriverObj.drive();
+
+            }
         }
     };
 

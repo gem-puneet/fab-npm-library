@@ -3,9 +3,26 @@ import 'driver.js/dist/driver.css';
 import './TourGuide.css';
 import configSteps from '../../clientConfig.json';
 
-const TourGuide = () => {
-    const step = configSteps.page1.contextualGuide.steps;
-    const theme = configSteps.page1.contextualGuide.theme.default;
+const TourGuide = (page) => {
+    let step;
+    let theme;
+    let enabled = false;
+    if (page == "home") {
+        if (configSteps.home.contextualGuide.enabled == true) {
+            enabled = true;
+        }
+        step = configSteps.home.contextualGuide.steps;
+        theme = configSteps.home.contextualGuide.theme.default;
+    } else if (page == "cart") {
+        if (configSteps.cart.contextualGuide.enabled == true) {
+            enabled = true;
+        }
+        step = configSteps.cart.contextualGuide.steps;
+        theme = configSteps.cart.contextualGuide.theme.yellowColor;
+    } else {
+        console.log("provided page is not available in configuration json");
+    }
+
     let driverSteps = [];
 
     step.forEach(step => {
@@ -21,31 +38,33 @@ const TourGuide = () => {
         });
     });
 
-    if (theme === "#fde047") {
-        driverSteps.forEach((step) => {
-            step.popover.popoverClass = 'driverjs-theme';
-        });
+    if (enabled) {
+        if (theme === "#fde047") {
+            driverSteps.forEach((step) => {
+                step.popover.popoverClass = 'driverjs-theme';
+            });
 
-        const yellowDriverObj = driver({
-            showProgress: true,
-            animate: false,
-            nextBtnText: '—›',
-            prevBtnText: '‹—',
-            doneBtnText: '✕',
-            steps: driverSteps
-        });
+            const yellowDriverObj = driver({
+                showProgress: true,
+                animate: false,
+                nextBtnText: '—›',
+                prevBtnText: '‹—',
+                doneBtnText: '✕',
+                steps: driverSteps
+            });
 
-        return yellowDriverObj.drive();
+            return yellowDriverObj.drive();
 
-    } else {
-        const defaultDriverObj = driver({
-            showProgress: true,
-            animate: false,
-            steps: driverSteps
-        });
+        } else {
+            const defaultDriverObj = driver({
+                showProgress: true,
+                animate: false,
+                steps: driverSteps
+            });
 
-        return defaultDriverObj.drive();
+            return defaultDriverObj.drive();
 
+        }
     }
 };
 
