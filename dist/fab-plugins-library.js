@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.fabPluginsLibrary = {}));
-})(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.fabPluginsLibrary = factory());
+})(this, (function () { 'use strict';
 
     // // Import modal and progress bar components
     // import { updateProgress } from './components/ProgressBar/ProgressBar.js';
@@ -20,12 +20,8 @@
         return number * number;
     }
 
-    var src = { square };
-    var src_1 = src.square;
+    var index = { square };
 
-    exports.default = src;
-    exports.square = src_1;
-
-    Object.defineProperty(exports, '__esModule', { value: true });
+    return index;
 
 }));
