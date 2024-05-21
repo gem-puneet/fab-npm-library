@@ -1,5 +1,6 @@
 import "./AnnModal.css";
 import newSvg from "./New.svg";
+import configSteps from "../../clientConfig.json";
 
 class AnnModalInstance {
     constructor() {

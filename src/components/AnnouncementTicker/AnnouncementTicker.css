@@ -98,8 +98,6 @@
     transform: translate(-50%, -50%);
     z-index: 4;
     /* Ensure the innermost dot is at the bottom */
-    animation: increaseDotSize 4s linear infinite;
-    animation-delay: 0s;
     animation: increaseInnerDotSize 4s ease-in-out infinite;
     animation-delay: -2s;
 }

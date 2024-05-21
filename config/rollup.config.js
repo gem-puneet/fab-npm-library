@@ -1,3 +1,4 @@
+// rollup.config.js
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
@@ -14,7 +15,10 @@ export default {
   output: {
     file: 'dist/fab-plugins-library.js',
     format: 'umd',
-    name: 'myPackage',
+    name: 'fabPluginsLibrary',
+    globals: {
+      react: 'React',
+    },
   },
   plugins: [
     resolve(),
@@ -29,7 +33,7 @@ export default {
       extensions: ['.css']
     }),
     html({
-      include: '**/*.html', // Include HTML files
+      include: '**/*.html',
       htmlMinifierOptions: {
         collapseWhitespace: true,
         collapseBooleanAttributes: true,
@@ -38,14 +42,14 @@ export default {
         minifyJS: true,
       },
     }),
-    image(), // For handling images
-    svgr(), // For handling SVG icons
+    image(),
+    svgr(),
     url({
-      limit: 10 * 1024, // Limit for inline files
-      include: ['**/*.svg'], // Include SVG files
-      emitFiles: true, // Emit files
+      limit: 10 * 1024,
+      include: ['**/*.svg'],
+      emitFiles: true,
     }),
-    json() // For handling JSON files
+    json()
   ],
-  external: ['react'], // Specify external dependencies
+  external: ['react'],
 };
