@@ -1079,8 +1079,7 @@
     ];
 
     class FAQComponent {
-        constructor(containerElement) {
-            this.faqOuterDiv = containerElement;
+        constructor() {
           }
         createHeader() {
             const header = document.createElement("div");
@@ -1107,22 +1106,28 @@
             faqOuterDiv.style.display = "none"; 
             });
 
-            
-
             headerText.appendChild(faqTitle);
             headerText.appendChild(svgImage);
             headerText.appendChild(MessageIcon);
             headerText.appendChild(closeIcon);
             header.appendChild(headerText);
-            this.faqOuterDiv.appendChild(header);
+            return header;
         }
 
         createFAQComponent() {
+            const FAQContainerOuter = document.createElement("div");
+            FAQContainerOuter.classList.add("faq-container-outer position-bottom-right");
             const bodyContainer = document.createElement("div");
             bodyContainer.classList.add("faq-body-container");
 
-            this.createHeader();
+            var FAQHeader = this.createHeader();
 
+            FAQContainerOuter.appendChild(FAQHeader);
+
+                
+            FAQContainerOuter.querySelector('.close-icon').addEventListener('click', () => {
+                this.closeFAQ(FAQContainerOuter);
+            });
             const inputElement = document.createElement("input");
             const searchImage = document.createElement("img");
 
@@ -1195,18 +1200,26 @@
                     toggleFAQItem(index + 1);
                 });
                 outerDiv.appendChild(queImage);
-            });
-            
+            });      
             bodyContainer.appendChild(outerDiv);
-            this.faqOuterDiv.appendChild(bodyContainer);
+            FAQContainerOuter.appendChild(bodyContainer);
+
+            document.body.appendChild(FAQContainerOuter);
+
+            return FAQContainerOuter;
+        }
+
+        openFAQ() {
+            const FAQCont = this.createFAQComponent();
+            FAQCont.style.display = "block";
+        }
+
+        closeFAQ(FAQContainerOuter) {
+            if (FAQContainerOuter && FAQContainerOuter.parentNode) {
+                FAQContainerOuter.parentNode.removeChild(FAQContainerOuter);
+            }
         }
     }
-
-
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     var faqComponent = new FAQComponent('');
-    //     faqComponent.createFAQComponent();
-    // });
 
     class HeadingComponent {
         constructor() {
@@ -1221,6 +1234,8 @@
     }
 
     var img = "data:image/svg+xml,%3csvg width='26' height='23' viewBox='0 0 26 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cg clip-path='url(%23clip0_855_832)'%3e%3cpath d='M10.9557 4.01515C10.2296 4.43434 9.98639 5.36662 10.4112 6.10235L10.3344 5.96938L7.48096 10.9261L4.68169 12.5423C3.58822 13.1736 3.22522 14.565 3.86493 15.673L3.99288 15.8946C4.55071 16.8608 5.67357 17.2703 6.67587 16.9458L10.2873 20.7465C10.7205 21.1937 11.4245 21.2009 11.8638 20.77C12.3032 20.339 12.3023 19.6304 11.8691 19.1832L8.70031 15.836L9.86813 15.1618L15.6312 15.1438L15.7847 15.4097C16.2095 16.1454 17.1385 16.4009 17.8646 15.9817C18.5906 15.5625 18.8338 14.6303 18.4091 13.8945L13.0355 4.5872C12.6107 3.85147 11.6817 3.59596 10.9557 4.01515Z' fill='white'/%3e%3cpath d='M20.3094 5.67066L17.6195 7.22369C17.2564 7.43329 17.1348 7.89943 17.3472 8.26729C17.5596 8.63515 18.0241 8.76291 18.3871 8.55331L21.077 7.00028C21.4401 6.79068 21.5617 6.32454 21.3493 5.95668C21.1369 5.58882 20.6724 5.46106 20.3094 5.67066Z' fill='white'/%3e%3cpath d='M16.2433 6.44626C16.3439 6.38818 16.436 6.30541 16.5016 6.19667L18.0479 3.74378C18.2744 3.38849 18.164 2.91447 17.811 2.68689C17.458 2.45931 16.9857 2.56057 16.7637 2.91334L15.2173 5.36623C14.9909 5.72152 15.1013 6.19554 15.4543 6.42312C15.7029 6.58098 16.0071 6.58262 16.2433 6.44626Z' fill='white'/%3e%3cpath d='M21.6107 9.92466L18.7132 10.0374C18.2967 10.0533 17.9703 10.4072 17.9935 10.8312C18.0141 11.2507 18.3694 11.5833 18.7903 11.5648L21.6878 11.4521C21.8147 11.4497 21.9324 11.4113 22.033 11.3532C22.2692 11.2168 22.4225 10.957 22.4075 10.6583C22.3844 10.2344 22.0316 9.90621 21.6107 9.92466Z' fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath id='clip0_855_832'%3e%3crect width='20' height='15' fill='white' transform='translate(0.5896 10) rotate(-30)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e";
+
+    // AnnouncementTicker.js
 
     class AnnouncementTickerInstance {
         constructor() {
@@ -1286,7 +1301,7 @@
                 const li = document.createElement("li");
                 li.textContent = itemText;
                 li.classList.add("AnnouncementTicker-li");
-            
+
                 // Check if it's the second item
                 if (index === 1) {
                     const linkSpan = document.createElement("span");
@@ -1294,10 +1309,9 @@
                     linkSpan.classList.add("AnnouncementTicker-li-link");
                     li.appendChild(linkSpan);
                 }
-            
+
                 ul.appendChild(li);
             });
-            
 
             // Append ul to container
             container.appendChild(ul);

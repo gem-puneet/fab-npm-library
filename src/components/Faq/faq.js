@@ -19,8 +19,7 @@ var faqItems = [
 ];
 
 export class FAQComponent {
-    constructor(containerElement) {
-        this.faqOuterDiv = containerElement;
+    constructor() {
       }
     createHeader() {
         const header = document.createElement("div");
@@ -163,6 +162,4 @@ export class FAQComponent {
 }
 
 
-const FAQGuide = new FAQComponent();
-export default FAQGuide;
 
