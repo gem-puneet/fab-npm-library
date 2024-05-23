@@ -1116,7 +1116,7 @@
 
         createFAQComponent() {
             const FAQContainerOuter = document.createElement("div");
-            FAQContainerOuter.classList.add("faq-container-outer position-bottom-right");
+            FAQContainerOuter.classList.add("faq-container-outer", "position-bottom-right");
             const bodyContainer = document.createElement("div");
             bodyContainer.classList.add("faq-body-container");
 
