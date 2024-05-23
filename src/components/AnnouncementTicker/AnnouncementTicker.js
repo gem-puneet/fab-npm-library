@@ -1,3 +1,4 @@
+// AnnouncementTicker.js
 import "./AnnouncementTicker.css"; // Import the CSS file
 import loudspeakerSvg from "./loudspeaker.svg"; // Import the loudspeaker SVG
 
@@ -65,7 +66,7 @@ class AnnouncementTickerInstance {
             const li = document.createElement("li");
             li.textContent = itemText;
             li.classList.add("AnnouncementTicker-li");
-        
+
             // Check if it's the second item
             if (index === 1) {
                 const linkSpan = document.createElement("span");
@@ -73,10 +74,9 @@ class AnnouncementTickerInstance {
                 linkSpan.classList.add("AnnouncementTicker-li-link");
                 li.appendChild(linkSpan);
             }
-        
+
             ul.appendChild(li);
         });
-        
 
         // Append ul to container
         container.appendChild(ul);
