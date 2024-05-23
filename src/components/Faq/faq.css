@@ -3,6 +3,7 @@
     width: 350px;
     height: 400px;
     background: #F8FAF8;
+    display: none;
 }
 .position-top-right {
     top: 0;

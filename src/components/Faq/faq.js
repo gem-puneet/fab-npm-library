@@ -47,22 +47,28 @@ export class FAQComponent {
         faqOuterDiv.style.display = "none"; 
         });
 
-        
-
         headerText.appendChild(faqTitle);
         headerText.appendChild(svgImage);
         headerText.appendChild(MessageIcon);
         headerText.appendChild(closeIcon);
         header.appendChild(headerText);
-        this.faqOuterDiv.appendChild(header);
+        return header;
     }
 
     createFAQComponent() {
+        const FAQContainerOuter = document.createElement("div");
+        FAQContainerOuter.classList.add("faq-container-outer position-bottom-right");
         const bodyContainer = document.createElement("div");
         bodyContainer.classList.add("faq-body-container");
 
-        this.createHeader();
+        var FAQHeader = this.createHeader();
 
+        FAQContainerOuter.appendChild(FAQHeader);
+
+            
+        FAQContainerOuter.querySelector('.close-icon').addEventListener('click', () => {
+            this.closeFAQ(FAQContainerOuter);
+        });
         const inputElement = document.createElement("input");
         const searchImage = document.createElement("img");
 
@@ -135,15 +141,28 @@ export class FAQComponent {
                 toggleFAQItem(index + 1);
             });
             outerDiv.appendChild(queImage);
-        });
-        
+        });      
         bodyContainer.appendChild(outerDiv);
-        this.faqOuterDiv.appendChild(bodyContainer);
+        FAQContainerOuter.appendChild(bodyContainer);
+
+        document.body.appendChild(FAQContainerOuter);
+
+        return FAQContainerOuter;
+    }
+
+    openFAQ() {
+        const FAQCont = this.createFAQComponent();
+        FAQCont.style.display = "block";
+    }
+
+    closeFAQ(FAQContainerOuter) {
+        if (FAQContainerOuter && FAQContainerOuter.parentNode) {
+            FAQContainerOuter.parentNode.removeChild(FAQContainerOuter);
+        }
     }
 }
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     var faqComponent = new FAQComponent('');
-//     faqComponent.createFAQComponent();
-// });
+const FAQGuide = new FAQComponent();
+export default FAQGuide;
+
