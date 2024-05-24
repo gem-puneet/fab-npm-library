@@ -1,19 +1,18 @@
-// rollup.config.js
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import html from 'rollup-plugin-html';
-import image from '@rollup/plugin-image'; // For handling images
-import svgr from '@svgr/rollup'; // For handling SVG icons
-import url from 'rollup-plugin-url'; // For handling SVG images
-import json from '@rollup/plugin-json'; // For handling JSON files
+import image from '@rollup/plugin-image';
+import svgr from '@svgr/rollup';
+import url from 'rollup-plugin-url';
+import json from '@rollup/plugin-json';
 
 export default {
   input: 'src/index.js',
   output: {
-    file: 'dist/fab-plugins-library.js',
+    file: 'dist/index.js',
     format: 'umd',
     name: 'fabPluginsLibrary',
     globals: {
@@ -21,7 +20,9 @@ export default {
     },
   },
   plugins: [
-    resolve(),
+    resolve({
+      extensions: ['.js', '.jsx', '.json', '.css']
+    }),
     commonjs(),
     postcss({
       plugins: [
@@ -51,5 +52,5 @@ export default {
     }),
     json()
   ],
-  external: ['react'],
+  external: ['react', 'react-dom'],
 };
